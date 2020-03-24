@@ -1,16 +1,27 @@
 import React from "react";
 import { HashRouter, NavLink, Route, Switch, Redirect } from "react-router-dom";
 
+import Recipe from "./Recipe/Recipe";
+import RecipesList from "./RecipesList/RecipesList";
+
 import "./App.css";
 
 function App() {
     return (
         <HashRouter basename="/">
             <div className="App">
-                <h1>h1</h1>
+                {/* <NavLink
+                    exact
+                    to="/recipes"
+                    className="nav-item"
+                    // activeClassName="selected"
+                    // key={elem.name}
+                >
+                    Wszystkie
+                </NavLink>
                 <NavLink
                     exact
-                    to="przepis-1"
+                    to="/recipe/1"
                     className="nav-item"
                     // activeClassName="selected"
                     // key={elem.name}
@@ -19,23 +30,23 @@ function App() {
                 </NavLink>
                 <NavLink
                     exact
-                    to="przepis-2"
+                    to="/recipe/12"
                     className="nav-item"
                     // activeClassName="selected"
                     // key={elem.name}
                 >
-                    Przepis 2
+                    Przepis 12
                 </NavLink>
-                <p>p1</p>
+                <p>p1</p> */}
                 <Switch>
                     <Route exact path="/">
                         <div>home?</div>
                     </Route>
-                    <Route exact path="/przepis-1">
-                        <div>przepis 1</div>
+                    <Route exact path="/recipes">
+                        <RecipesList />
                     </Route>
-                    <Route exact path="/przepis-2">
-                        <div>przepis 2</div>
+                    <Route exact path="/recipe/:id">
+                        <Recipe />
                     </Route>
                     <Redirect to="/"></Redirect>
                 </Switch>
