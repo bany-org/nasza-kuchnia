@@ -1,0 +1,4 @@
+zasadza działania
+
+pierwszy widok - powiedzmy 10 najwyżej ocenionych, możliwość sortowania
+

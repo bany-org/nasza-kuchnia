@@ -6,6 +6,7 @@ const Recipe = () => {
     return (
         <div>
             <h3>Przepis: {id}</h3>
+            <p>To jest otwarty przepis na całą stronę</p>
             <NavLink
                 exact
                 to="/recipes"
