@@ -1,0 +1,19 @@
+.App {
+    text-align: center;
+}
+
+.nav-item {
+    background-color: aqua;
+    margin: 5px;
+}
+
+@media (min-width: 500px) {
+    .App {
+        text-align: right;
+    }
+
+    .nav-item {
+        margin: 20px;
+        background-color: blueviolet;
+    }
+}
