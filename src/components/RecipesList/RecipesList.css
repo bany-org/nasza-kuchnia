@@ -1,0 +1,16 @@
+.recipes-list {
+    background-color: #dddddd;
+}
+
+.recipes-list-item {
+    text-decoration: none;
+}
+
+.recipe-card-ingredients {
+    background-color: lightblue;
+    font-size: 8px;
+    width: 45%;
+    margin: 5px;
+    height: 60px;
+    overflow: hidden;
+}

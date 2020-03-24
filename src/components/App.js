@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter, NavLink, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import Recipe from "./Recipe/Recipe";
 import RecipesList from "./RecipesList/RecipesList";
@@ -10,37 +10,10 @@ function App() {
     return (
         <HashRouter basename="/">
             <div className="App">
-                {/* <NavLink
-                    exact
-                    to="/recipes"
-                    className="nav-item"
-                    // activeClassName="selected"
-                    // key={elem.name}
-                >
-                    Wszystkie
-                </NavLink>
-                <NavLink
-                    exact
-                    to="/recipe/1"
-                    className="nav-item"
-                    // activeClassName="selected"
-                    // key={elem.name}
-                >
-                    Przepis 1
-                </NavLink>
-                <NavLink
-                    exact
-                    to="/recipe/12"
-                    className="nav-item"
-                    // activeClassName="selected"
-                    // key={elem.name}
-                >
-                    Przepis 12
-                </NavLink>
-                <p>p1</p> */}
                 <Switch>
                     <Route exact path="/">
-                        <div>home?</div>
+                        <RecipesList />
+                        {/* HOME?  */}
                     </Route>
                     <Route exact path="/recipes">
                         <RecipesList />
@@ -48,7 +21,7 @@ function App() {
                     <Route exact path="/recipe/:id">
                         <Recipe />
                     </Route>
-                    <Redirect to="/"></Redirect>
+                    <Redirect to="/recipes"></Redirect>
                 </Switch>
             </div>
         </HashRouter>
