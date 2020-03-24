@@ -1,97 +1,113 @@
 <html lang="pl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Nasza kuchnia</title>
-  <!-- materialize icons, css & js -->
-  <link type="text/css" href="./css/materialize.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link type="text/css" href="./css/styles.css" rel="stylesheet">
-  <script type="text/javascript" src="./js/materialize.min.js"></script>
-  <link rel="manifest" href="./manifest.json">
-  <!-- ios support -->
-  <link rel="apple-touch-icon" href="./img/icons/icon-96x96.png">
-  <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4">
-  <meta name="theme-color" content="#FFE1C4">
+    <!-- <meta charset="UTF-8"> -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>Nasza kuchnia</title>
+    <!-- materialize icons, css & js -->
+    <!-- <link type="text/css" href="./css/materialize.min.css" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> -->
+    <!-- <link type="text/css" href="./css/styles.css" rel="stylesheet"> -->
+    <!-- <script type="text/javascript" src="./js/materialize.min.js"></script> -->
+    <!-- <link rel="manifest" href="./manifest.json"> -->
+    <!-- ios support -->
+    <!-- <link rel="apple-touch-icon" href="./img/icons/icon-96x96.png"> -->
+    <!-- <meta name="apple-mobile-web-app-status-bar" content="#FFE1C4"> -->
+    <!-- <meta name="theme-color" content="#FFE1C4"> -->
+
+
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="Web site created using create-react-app" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 </head>
+
 <body class="grey lighten-4">
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
 
-  <!-- top nav -->
-  <nav class="z-depth-0">
-    <div class="nav-wrapper container">
-      <a href="./">Nasza<span>Kuchnia</span></a>
-      <span class="right grey-text text-darken-1">
-        <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
-      </span>
-    </div>
-  </nav>
+    <!-- top nav -->
+    <!-- <nav class="z-depth-0">
+        <div class="nav-wrapper container">
+            <a href="./">Nasza<span>Kuchnia</span></a>
+            <span class="right grey-text text-darken-1">
+                <i class="material-icons sidenav-trigger" data-target="side-menu">menu</i>
+            </span>
+        </div>
+    </nav> -->
 
-  <!-- side nav -->
-  <ul id="side-menu" class="sidenav side-menu">
-    <li><a class="subheader">NASZAKUCHNIA</a></li>
-    <li><a href="./" class="waves-effect">Home</a></li>
-    <li><a href="./pages/about.html" class="waves-effect">About</a></li>
-    <li><div class="divider"></div></li>
-    <li><a href="./pages/contact.html" class="waves-effect">
-      <i class="material-icons">mail_outline</i>Contact</a>
-    </li>
-  </ul>
+    <!-- side nav -->
+    <!-- <ul id="side-menu" class="sidenav side-menu">
+        <li><a class="subheader">NASZAKUCHNIA</a></li>
+        <li><a href="./" class="waves-effect">Home</a></li>
+        <li><a href="./pages/about.html" class="waves-effect">About</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a href="./pages/contact.html" class="waves-effect">
+                <i class="material-icons">mail_outline</i>Contact</a>
+        </li>
+    </ul> -->
 
-  <!-- recipes -->
-  <div class="recipes container grey-text text-darken-1">
-    
-  </div>
+    <!-- recipes -->
+    <!-- <div class="recipes container grey-text text-darken-1"> -->
 
-  <div class="center">
-    <a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form">
-      <i class="material-icons">add</i>
-    </a>
-  </div>
+    <!-- </div> -->
 
-  <!-- add recipe side nav -->
-  <div id="side-form" class="sidenav side-form">
-    <form class="add-recipe container section">
-      <h6 >New Recipe</h6>
-      <div class="divider"></div>
-      <div class="input-field">
-        <input placeholder="Imie" id="author" type="text" class="validate">
-        <label for="author">Your name</label>
-      </div>
-      <div class="input-field">
-        <input placeholder="e.g. Ninja soup" id="title" type="text" class="validate">
-        <label for="title">Recipe Title</label>
-      </div>
-      <div class="input-field">
-        <input placeholder="e.g. Tofu, mushroom, garlic" id="ingredients" type="text" class="validate">
-        <label for="ingredients">Ingredients</label>
-      </div>
-      <div class="input-field center">
-        <button class="btn-small sidenav-close">Add</button>
-      </div>
-    </form>
-  </div>
+    <!-- <div class="center">
+        <a class="btn-floating btn-small btn-large add-btn sidenav-trigger" data-target="side-form">
+            <i class="material-icons">add</i>
+        </a>
+    </div> -->
 
-  <script src="./config.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: config.apiKey,
-      authDomain: "nasza-kuchnia.firebaseapp.com",
-      databaseURL: "https://nasza-kuchnia.firebaseio.com",
-      projectId: "nasza-kuchnia",
-      storageBucket: "nasza-kuchnia.appspot.com",
-      messagingSenderId: config.messagingSenderId,
-      appId: config.appId,
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    const db = firebase.firestore();
-  </script>
-  <script src="./js/app.js"></script>
-  <script src="./js/db.js"></script>
-  <script src="./js/ui.js"></script>
+    <!-- add recipe side nav -->
+    <!-- <div id="side-form" class="sidenav side-form">
+        <form class="add-recipe container section">
+            <h6>New Recipe</h6>
+            <div class="divider"></div>
+            <div class="input-field">
+                <input placeholder="Imie" id="author" type="text" class="validate">
+                <label for="author">Your name</label>
+            </div>
+            <div class="input-field">
+                <input placeholder="e.g. Ninja soup" id="title" type="text" class="validate">
+                <label for="title">Recipe Title</label>
+            </div>
+            <div class="input-field">
+                <input placeholder="e.g. Tofu, mushroom, garlic" id="ingredients" type="text" class="validate">
+                <label for="ingredients">Ingredients</label>
+            </div>
+            <div class="input-field center">
+                <button class="btn-small sidenav-close">Add</button>
+            </div>
+        </form>
+    </div> -->
+
+    <script src="./config.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: config.apiKey,
+            authDomain: "nasza-kuchnia.firebaseapp.com",
+            databaseURL: "https://nasza-kuchnia.firebaseio.com",
+            projectId: "nasza-kuchnia",
+            storageBucket: "nasza-kuchnia.appspot.com",
+            messagingSenderId: config.messagingSenderId,
+            appId: config.appId,
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+    <!-- <script src="./js/app.js"></script> -->
+    <!-- <script src="./js/db.js"></script> -->
+    <!-- <script src="./js/ui.js"></script> -->
 </body>
+
 </html>
