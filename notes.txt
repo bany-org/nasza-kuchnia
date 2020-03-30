@@ -1,4 +1,5 @@
 zasadza działania
 
 pierwszy widok - powiedzmy 10 najwyżej ocenionych, możliwość sortowania
+2-3 karty na ekran telefonu
 
