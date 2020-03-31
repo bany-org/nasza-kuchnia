@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { useParams, NavLink } from "react-router-dom";
 
+import NavbarButton from "../NavbarButton/NavbarButton";
+import BackArrow from "../assets/BackArrow/BackArrow";
+import PrintIcon from "../assets/PrintIcon/PrintIcon";
+import TrashIcon from "../assets/TrashIcon/TrashIcon";
+import PencilIcon from "../assets/PencilIcon/PencilIcon";
+
 import "./Recipe.css";
 
 const recipeMock = {
@@ -34,16 +40,15 @@ const Recipe = () => {
     return (
         <div className="recipe">
             <div className="recipe-navbar">
-                <NavLink
-                    exact
+                <NavbarButton
                     to="/recipes"
-                    className="nav-item"
-                    // activeClassName="selected"
-                    // key={elem.id}
-                >
-                    Wróć do listy przepisów
-                </NavLink>
-                drukuj (loguj lub usuń i edytuj)
+                    exact
+                    label="Wróć do listy przepisów"
+                    icon={<BackArrow />}
+                ></NavbarButton>
+                <NavbarButton icon={<PrintIcon />}></NavbarButton>
+                <NavbarButton icon={<TrashIcon />}></NavbarButton>
+                <NavbarButton icon={<PencilIcon />}></NavbarButton>
             </div>
             <div className="recipe-content">
                 <div className="recipe-content-header">

@@ -1,0 +1,34 @@
+.navbar-button {
+    /* width: 160px; */
+    min-width: 37px;
+    height: 37px;
+    border-radius: 30px;
+    background-color: #003a57;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+
+    color: inherit;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.navbar-button__icon {
+    /* margin-right: 5px; */
+}
+
+.navbar-button__label {
+    font-family: NunitoSans;
+    font-size: 10px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 5px;
+}
