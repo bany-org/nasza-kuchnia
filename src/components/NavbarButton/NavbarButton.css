@@ -21,9 +21,9 @@
 }
 
 .navbar-button__label {
-    font-family: NunitoSans;
+    font-family: "Nunito Sans", sans-serif;
     font-size: 10px;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-stretch: normal;
     font-style: normal;
     line-height: normal;
@@ -31,4 +31,8 @@
     color: #ffffff;
     text-decoration: none;
     margin: 5px;
+}
+
+.navlink {
+    text-decoration: none;
 }

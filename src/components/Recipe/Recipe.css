@@ -18,10 +18,13 @@
     box-shadow: 0 5px 5px 3px rgba(47, 47, 55, 0.21);
     border: solid 1px #ffb803;
     background-color: #ffb803;
+
+    overflow: auto;
 }
 
 .recipe-content-header {
     height: 100px;
+    display: flex;
 }
 
 .recipe-content-header--image {
@@ -30,6 +33,36 @@
 
 .recipe-content-header--info {
     width: 75%;
+}
+
+.recipe-content-header--name {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.recipe-content-header__meta {
+    display: flex;
+}
+
+.recipe-content-header__meta--time {
+    font-family: "Playfair Display", serif;
+    font-size: 8px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    display: flex;
+    align-items: center;
+
+    padding: 5px;
 }
 
 .recipe-content-main {
@@ -41,6 +74,38 @@
     background-color: #dde2e5;
 }
 
+.recipe-content-main--info {
+    /* width: 560px; */
+    /* height: 64px; */
+    padding: 10px;
+    opacity: 0.87;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.11;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.recipe-content-header--name {
+    /* width: 256px; */
+    /* height: 51px; */
+    font-family: "Playfair Display", serif;
+    font-size: 19px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+
+    text-align: left;
+    padding-left: 8px;
+    margin-top: 17px;
+}
+
 .recipe-main-button {
     width: 50%;
     height: 30px;
@@ -48,12 +113,22 @@
     /* box-shadow: 0 10px 10px 5px rgba(47, 47, 55, 0.21); */
     border: solid 1px #ffb803;
     background-color: #ffffff;
+
+    font-family: "Playfair Display", serif;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
 }
 
 .ingredients-list {
     text-align: left;
     list-style: none;
     padding: unset;
+    margin: 0;
 }
 
 .ingredients-list-item {
@@ -64,4 +139,73 @@
     opacity: 0.77;
     border-radius: 9px;
     background-color: #ffffff;
+
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.32;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.ingredients-list-item:first-child {
+    margin-top: 0px;
+}
+
+.preparation-list {
+    text-align: left;
+    list-style: none;
+    padding: unset;
+    margin: 0;
+}
+
+.preparation-list-item {
+    margin: 10px;
+    padding-left: 10px;
+    width: 90%;
+    min-height: 35px;
+    opacity: 0.77;
+    border-radius: 9px;
+    background-color: #ffffff;
+
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.32;
+    letter-spacing: normal;
+    color: #000000;
+
+    padding-top: 8px;
+}
+
+.preparation-list-item__header {
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.preparation-list-item__content {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 13px;
+    /* font-weight: normal; */
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    color: #000000;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.preparation-list-item:first-child {
+    margin-top: 0px;
 }
