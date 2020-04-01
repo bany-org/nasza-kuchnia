@@ -5,7 +5,11 @@ import "./NavbarButton.css";
 
 const NavbarButton = (props) => {
     return (
-        <NavLink exact={props.exact || false} to={props.path || ""}>
+        <NavLink
+            exact={props.exact || false}
+            to={props.path || ""}
+            className="navlink"
+        >
             <button
                 className="navbar-button"
                 type="button"
