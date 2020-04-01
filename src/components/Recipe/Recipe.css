@@ -37,7 +37,7 @@
 
 .recipe-content-header--name {
     font-family: "Nunito Sans", sans-serif;
-    font-size: 19px;
+    font-size: 21px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -52,7 +52,7 @@
 
 .recipe-content-header__meta--time {
     font-family: "Playfair Display", serif;
-    font-size: 8px;
+    font-size: 10px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -77,7 +77,7 @@
 .recipe-content-main--info {
     /* width: 560px; */
     /* height: 64px; */
-    padding: 10px;
+    padding: 11px;
     opacity: 0.87;
     font-family: "Nunito Sans", sans-serif;
     font-size: 10px;
@@ -115,7 +115,7 @@
     background-color: #ffffff;
 
     font-family: "Playfair Display", serif;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: bold;
     font-stretch: normal;
     font-style: normal;
@@ -141,7 +141,7 @@
     background-color: #ffffff;
 
     font-family: "Nunito Sans", sans-serif;
-    font-size: 12px;
+    font-size: 13px;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -184,7 +184,7 @@
 
 .preparation-list-item__header {
     font-family: "Playfair Display", serif;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 600;
     font-stretch: normal;
     font-style: normal;
@@ -195,7 +195,7 @@
 
 .preparation-list-item__content {
     font-family: "Nunito Sans", sans-serif;
-    font-size: 13px;
+    font-size: 14px;
     /* font-weight: normal; */
     font-stretch: normal;
     font-style: normal;
