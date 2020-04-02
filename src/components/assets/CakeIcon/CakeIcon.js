@@ -10,9 +10,9 @@ const CakeIcon = () => {
         >
             <g
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 stroke="#000"
-                stroke-width="1.5"
+                strokeWidth="1.5"
                 transform="translate(1 1)"
             >
                 <path d="M1 15H33V30H1z" />

@@ -1,0 +1,42 @@
+.recipe-content-header {
+    height: 100px;
+    display: flex;
+}
+
+.recipe-content-header__image {
+    width: 25%;
+}
+
+.recipe-content-header--info {
+    width: 75%;
+}
+
+.recipe-content-header--name {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+
+.recipe-content-header__meta {
+    display: flex;
+}
+
+.recipe-content-header__meta--time {
+    font-family: "Playfair Display", serif;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    display: flex;
+    align-items: center;
+
+    padding: 5px;
+}
