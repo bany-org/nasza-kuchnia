@@ -5,19 +5,26 @@ import FaceIcon from "../assets/FaceIcon/FaceIcon";
 import CakeIcon from "../assets/CakeIcon/CakeIcon";
 
 import HamburgerPlaceholder from "../assets/HamburgerPlaceholder/HamburgerPlaceholder";
+import CakePlaceholder from "../assets/CakePlaceholder/CakePlaceholder";
+import SaladPlaceholder from "../assets/SaladPlaceholder/SaladPlaceholder";
+import SoupPlaceholder from "../assets/SoupPlaceholder/SoupPlaceholder";
+import CupcakePlaceholder from "../assets/CupcakePlaceholder/CupcakePlaceholder";
+import MealPlaceholder from "../assets/MealPlaceholder/MealPlaceholder";
+import DishPlaceholder from "../assets/DishPlaceholder/DishPlaceholder";
 
 import "./RecipeCard.css";
 
 const RecipeCard = ({ recipe }) => {
     return (
         <div className="recipe-card">
-            {/* <img
-                src={hamplaceholder}
-                alt="pizza"
-                
-            /> */}
             <div className="recipe-card__image">
-                <HamburgerPlaceholder />
+                {recipe.id === 1 && <SaladPlaceholder />}
+                {recipe.id === 2 && <CakePlaceholder />}
+                {recipe.id === 3 && <HamburgerPlaceholder />}
+                {recipe.id === 4 && <SoupPlaceholder />}
+                {recipe.id === 5 && <CupcakePlaceholder />}
+                {recipe.id === 6 && <MealPlaceholder />}
+                {recipe.id === 7 && <DishPlaceholder />}
             </div>
 
             <div className="recipe-card--info">

@@ -12,11 +12,13 @@ import RecipeContentMain from "../RecipeContentMain/RecipeContentMain";
 const Recipe = () => {
     let { id } = useParams();
 
+    console.log("asdf", id);
+
     return (
         <div className="recipe">
             <RecipeNavbar />
             <div className="recipe-content">
-                <RecipeContentHeader data={recipeMock.generalData} />
+                <RecipeContentHeader data={recipeMock.generalData} id={id} />
                 <RecipeContentMain data={recipeMock.recipeMain} />
             </div>
         </div>

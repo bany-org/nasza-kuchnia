@@ -11,7 +11,7 @@ const shortList = [
         id: 1,
         generalData: {
             author: "Magda Gessler",
-            name: "Domowa pizza",
+            name: "Sałatka grecka",
             time: "1h",
             people: "4",
             type: "ciasto",
@@ -21,7 +21,7 @@ const shortList = [
         id: 2,
         generalData: {
             author: "Magda Gessler",
-            name: "Domowa pizza",
+            name: "Jabłecznik z bezą",
             time: "1h",
             people: "4",
             type: "ciasto",
@@ -41,7 +41,7 @@ const shortList = [
         id: 4,
         generalData: {
             author: "Magda Gessler",
-            name: "Domowa pizza",
+            name: "Zupa na winie",
             time: "1h",
             people: "4",
             type: "ciasto",
@@ -51,7 +51,7 @@ const shortList = [
         id: 5,
         generalData: {
             author: "Magda Gessler",
-            name: "Domowa pizza",
+            name: "Babeczki z czekoladą",
             time: "1h",
             people: "4",
             type: "ciasto",
@@ -61,7 +61,7 @@ const shortList = [
         id: 6,
         generalData: {
             author: "Magda Gessler",
-            name: "Domowa pizza",
+            name: "Schabowe po śląsku",
             time: "1h",
             people: "4",
             type: "ciasto",
@@ -71,7 +71,7 @@ const shortList = [
         id: 7,
         generalData: {
             author: "Magda Gessler",
-            name: "Domowa pizza",
+            name: "Kaczka po wiedeńsku",
             time: "1h",
             people: "4",
             type: "ciasto",
