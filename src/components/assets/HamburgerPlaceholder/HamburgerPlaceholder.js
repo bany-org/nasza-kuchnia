@@ -17,13 +17,13 @@ const HamburgerPlaceholder = () => {
                     y1="32.281%"
                     y2="109.796%"
                 >
-                    <stop offset="0%" stop-color="#003A57" />
-                    <stop offset="100%" stop-color="#0062C5" />
+                    <stop offset="0%" stopColor="#003A57" />
+                    <stop offset="100%" stopColor="#0062C5" />
                 </linearGradient>
             </defs>
-            <g fill="none" fill-rule="evenodd">
+            <g fill="none" fillRule="evenodd">
                 <path fill="url(#prefix__a)" d="M0 0H253V332H0z" />
-                <g stroke-width="3.5">
+                <g strokeWidth="3.5">
                     <path
                         fill="#F4B649"
                         stroke="#F8E71C"
@@ -56,8 +56,8 @@ const HamburgerPlaceholder = () => {
                     />
                     <path
                         stroke="#FFF"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                         d="M18.544 37.29c.992-1.314 2.24-2.602 3.722-3.854M83.18 13.479c-7.29-1.18-16.1-1.01-25.348.787-10.15 1.973-19.077 5.568-25.591 9.904"
                         transform="rotate(-30 276.551 31.532)"
                     />
