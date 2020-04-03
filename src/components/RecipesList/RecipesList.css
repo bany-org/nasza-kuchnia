@@ -1,5 +1,4 @@
 .recipes-list {
-    background-color: #dddddd;
 }
 
 .recipes-list-item {
@@ -13,4 +12,23 @@
     margin: 5px;
     height: 60px;
     overflow: hidden;
+}
+
+.recipes-list--logo {
+    padding: 10px;
+}
+
+.recipes-list--title {
+    width: 123px;
+    height: 36px;
+    object-fit: contain;
+    font-family: Pacifico;
+    font-size: 40px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: right;
+    color: #000000;
 }

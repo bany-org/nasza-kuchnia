@@ -1,23 +1,69 @@
 .recipe-card {
-    background-color: burlywood;
+    background-color: #ffffff;
     margin: 10px;
-    border-radius: 10px;
     height: 120px;
     display: flex;
-}
-
-.recipe-card-image {
-    width: 20%;
-    border: solid black 1px;
-    border-radius: 10px 0 0 10px;
-}
-
-.recipe-card-content {
-    background-color: white;
-    width: 100%;
-    border-radius: 0 10px 10px 0;
+    border-radius: 20px;
 }
 
 .recipe-card-recipe-short {
     display: flex;
+}
+
+.recipe-card {
+    height: 100px;
+    display: flex;
+}
+
+.recipe-card__image {
+    /* width: 25%; */
+    width: 90px;
+    border-radius: 20px 0 0 20px;
+    overflow: hidden;
+}
+
+.recipe-card--info {
+    width: 100%;
+    box-shadow: 0 10px 10px 5px rgba(47, 47, 55, 0.21);
+    border: solid 1px #ffcd32;
+    border-radius: 0 20px 20px 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.recipe-card--name {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 21px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    /* margin-top: 12px; */
+
+    text-align: left;
+    padding-left: 8px;
+    /* margin-top: 12px; */
+}
+
+.recipe-card__meta {
+    display: flex;
+}
+
+.recipe-card__meta--time {
+    font-family: "Playfair Display", serif;
+    font-size: 12px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    display: flex;
+    align-items: center;
+
+    padding: 5px;
 }
