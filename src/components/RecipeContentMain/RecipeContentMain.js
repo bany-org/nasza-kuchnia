@@ -5,12 +5,13 @@ import "./RecipeContentMain.css";
 const RecipeContentMain = ({ data }) => {
     const [ingredientsTab, changeTab] = useState(true);
     const [clickedIngredientsArray, toggleItem] = useState([]);
+    const [clickedIngredientsArray2, toggleItem2] = useState([]);
 
     const changetoTrue = () => changeTab(true);
     const changeTofalse = () => changeTab(false);
 
     const addToState = (e) => {
-        const name = e.target.attributes.name.value;
+        const name = e.target?.attributes.name?.value;
         e.target.classList.toggle("ingredients-list-item--clicked");
 
         const index = clickedIngredientsArray.indexOf(name);
@@ -22,6 +23,33 @@ const RecipeContentMain = ({ data }) => {
             myarr.splice(index, 1);
             toggleItem(myarr);
         }
+    };
+
+    const addToState2 = (e) => {
+        const name = e.target?.attributes.name?.value;
+
+        if (name === "child") {
+            e.target.parentElement.classList.toggle(
+                "preparation-list-item--clicked"
+            );
+        } else {
+            e.target.classList.toggle("preparation-list-item--clicked");
+        }
+
+        const index = clickedIngredientsArray2.indexOf(name);
+        const myarr = [...clickedIngredientsArray2];
+
+        if (index === -1) {
+            toggleItem2([...clickedIngredientsArray2, name]);
+        } else {
+            myarr.splice(index, 1);
+            toggleItem2(myarr);
+        }
+    };
+
+    const stop = (e) => {
+        e.stopPropagation();
+        return;
     };
 
     return (
@@ -61,20 +89,39 @@ const RecipeContentMain = ({ data }) => {
                                 className={myClass}
                             >
                                 {`${elem.name} ${elem.quantity} ${elem.unit}`}
-                                <div className="path"></div>
+                                <div className="path" onClick={stop}></div>
                             </li>
                         );
                     })}
                 </ul>
             ) : (
                 <ul className="ingredients-list">
-                    {Object.keys(data.preparation).map((elem, i) => {
+                    {Object.keys(data.preparation).map((elem) => {
+                        console.log("mapowanie", clickedIngredientsArray, elem);
+                        let myClass = "preparation-list-item";
+                        if (clickedIngredientsArray.indexOf(elem.name) !== -1) {
+                            myClass =
+                                "preparation-list-item preparation-list-item--clicked";
+                        }
                         return (
-                            <li key={elem} className="preparation-list-item">
-                                <span className="preparation-list-item__header">
+                            <li
+                                key={elem}
+                                name={elem}
+                                onClick={(e) => addToState2(e)}
+                                className={myClass}
+                            >
+                                <span
+                                    className="preparation-list-item__header"
+                                    // onClick={stop}
+                                    name="child"
+                                >
                                     Krok {elem}
                                 </span>
-                                <div className="preparation-list-item__content">
+                                <div
+                                    className="preparation-list-item__content"
+                                    name="child"
+                                    // onClick={stop}
+                                >
                                     {data.preparation[elem]}
                                 </div>
                             </li>
