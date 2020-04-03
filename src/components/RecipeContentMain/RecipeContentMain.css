@@ -91,6 +91,7 @@
 
 .ingredients-list-item--clicked {
     opacity: 0.5;
+    text-decoration: line-through;
 }
 
 .ingredients-list-item--clicked > .path {
@@ -163,4 +164,13 @@
 
 .preparation-list-item:first-child {
     margin-top: 0px;
+}
+
+.preparation-list-item--clicked {
+    opacity: 0.5;
+    /* text-decoration: line-through; */
+}
+
+.preparation-list-item--clicked > div {
+    display: none;
 }
