@@ -26,12 +26,14 @@ const RecipeContentMain = ({ data }) => {
     };
 
     const addToState2 = (e) => {
-        const name = e.target?.attributes.name?.value;
+        let name = e.target?.attributes.name?.value;
 
         if (name === "child") {
             e.target.parentElement.classList.toggle(
                 "preparation-list-item--clicked"
             );
+
+            name = e.target.parentElement.attributes.name?.value;
         } else {
             e.target.classList.toggle("preparation-list-item--clicked");
         }
@@ -74,7 +76,6 @@ const RecipeContentMain = ({ data }) => {
             {ingredientsTab ? (
                 <ul className="ingredients-list">
                     {data.ingredients.map((elem, i) => {
-                        console.log("mapowanie", clickedIngredientsArray, elem);
                         let myClass = "ingredients-list-item";
                         if (clickedIngredientsArray.indexOf(elem.name) !== -1) {
                             myClass =
@@ -97,9 +98,8 @@ const RecipeContentMain = ({ data }) => {
             ) : (
                 <ul className="ingredients-list">
                     {Object.keys(data.preparation).map((elem) => {
-                        console.log("mapowanie", clickedIngredientsArray, elem);
                         let myClass = "preparation-list-item";
-                        if (clickedIngredientsArray.indexOf(elem.name) !== -1) {
+                        if (clickedIngredientsArray2.indexOf(elem) !== -1) {
                             myClass =
                                 "preparation-list-item preparation-list-item--clicked";
                         }
