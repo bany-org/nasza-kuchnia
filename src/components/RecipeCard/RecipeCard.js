@@ -1,23 +1,23 @@
 import React from "react";
 
-import ClockIcon from "../assets/ClockIcon/ClockIcon";
-import FaceIcon from "../assets/FaceIcon/FaceIcon";
+import ClockIcon from "../../assets/ClockIcon/ClockIcon";
+import FaceIcon from "../../assets/FaceIcon/FaceIcon";
 
-import CakeIcon from "../assets/CakeIcon/CakeIcon";
-import SaladIcon from "../assets/SaladIcon/SaladIcon";
-import MealIcon from "../assets/MealIcon/MealIcon";
-import SoupIcon from "../assets/SoupIcon/SoupIcon";
-import FastfoodIcon from "../assets/FastfoodIcon/FastfoodIcon";
-import DishIcon from "../assets/DishIcon/DishIcon";
-import CupcakeIcon from "../assets/CupcakeIcon/CupcakeIcon";
+import CakeIcon from "../../assets/CakeIcon/CakeIcon";
+import SaladIcon from "../../assets/SaladIcon/SaladIcon";
+import MealIcon from "../../assets/MealIcon/MealIcon";
+import SoupIcon from "../../assets/SoupIcon/SoupIcon";
+import FastfoodIcon from "../../assets/FastfoodIcon/FastfoodIcon";
+import DishIcon from "../../assets/DishIcon/DishIcon";
+import CupcakeIcon from "../../assets/CupcakeIcon/CupcakeIcon";
 
-import HamburgerPlaceholder from "../assets/HamburgerPlaceholder/HamburgerPlaceholder";
-import CakePlaceholder from "../assets/CakePlaceholder/CakePlaceholder";
-import SaladPlaceholder from "../assets/SaladPlaceholder/SaladPlaceholder";
-import SoupPlaceholder from "../assets/SoupPlaceholder/SoupPlaceholder";
-import CupcakePlaceholder from "../assets/CupcakePlaceholder/CupcakePlaceholder";
-import MealPlaceholder from "../assets/MealPlaceholder/MealPlaceholder";
-import DishPlaceholder from "../assets/DishPlaceholder/DishPlaceholder";
+import HamburgerPlaceholder from "../../assets/HamburgerPlaceholder/HamburgerPlaceholder";
+import CakePlaceholder from "../../assets/CakePlaceholder/CakePlaceholder";
+import SaladPlaceholder from "../../assets/SaladPlaceholder/SaladPlaceholder";
+import SoupPlaceholder from "../../assets/SoupPlaceholder/SoupPlaceholder";
+import CupcakePlaceholder from "../../assets/CupcakePlaceholder/CupcakePlaceholder";
+import MealPlaceholder from "../../assets/MealPlaceholder/MealPlaceholder";
+import DishPlaceholder from "../../assets/DishPlaceholder/DishPlaceholder";
 
 import "./RecipeCard.css";
 

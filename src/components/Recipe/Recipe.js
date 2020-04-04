@@ -4,11 +4,10 @@ import axios from "axios";
 
 import RecipeNavbar from "../RecipeNavbar/RecipeNavbar";
 import RecipeContentHeader from "../RecipeContentHeader/RecipeContetHeader";
-
-import { recipeMock } from "./pizza1";
-
-import "./Recipe.css";
 import RecipeContentMain from "../RecipeContentMain/RecipeContentMain";
+
+import RecipeSkeleton from "./Recipe.components";
+import "./Recipe.css";
 
 const Recipe = () => {
     const [recipe, updateRecipe] = useState({});
@@ -17,16 +16,9 @@ const Recipe = () => {
 
     useEffect(() => {
         axios
-            // .get(`https://test-chat-bany.herokuapp.com/recipe/${id}`)
-            .get(`http://localhost:3000/recipe/${id}`)
+            .get(`https://test-chat-bany.herokuapp.com/recipe/${id}`)
+            // .get(`http://localhost:3000/recipe/${id}`)
             .then((res) => {
-                // use JSON.stringify here and on backend JSON to string??
-                // const recipe = JSON.stringify(res);
-                // updateRecipe(recipe.data)
-
-                // BYĆ MOŻE AXIOS JUŻ ZROBIŁ STRINGIFY I TRZEBA TYLKO NA BACKENDZIE?
-
-                console.log("server response", res.data);
                 updateRecipe(res.data);
                 changeLoading(false);
             });
@@ -35,16 +27,19 @@ const Recipe = () => {
     return (
         <div className="recipe">
             <RecipeNavbar />
-            {isLoading && <div>spinner</div>}
-            {!isLoading && (
-                <div className="recipe-content">
-                    <RecipeContentHeader
-                        data={recipe.generalData}
-                        id={recipe.id}
-                    />
-                    <RecipeContentMain data={recipe.recipeMain} />
-                </div>
-            )}
+            <div className="recipe-content">
+                {isLoading ? (
+                    <RecipeSkeleton />
+                ) : (
+                    <>
+                        <RecipeContentHeader
+                            data={recipe.generalData}
+                            id={recipe.id}
+                        />
+                        <RecipeContentMain data={recipe.recipeMain} />
+                    </>
+                )}
+            </div>
         </div>
     );
 };
