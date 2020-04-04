@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 import RecipeCard from "../RecipeCard/RecipeCard";
-import Logo from "../assets/Logo/Logo";
+import Logo from "../../assets/Logo/Logo";
 
 import "./RecipesList.css";
 
@@ -13,16 +13,9 @@ const RecipesList = () => {
 
     useEffect(() => {
         axios
-            // .get(`https://test-chat-bany.herokuapp.com/recipe/${id}`)
-            .get(`http://localhost:3000/recipes`)
+            .get(`https://test-chat-bany.herokuapp.com/recipes`)
+            // .get(`http://localhost:3000/recipes`)
             .then((res) => {
-                // use JSON.stringify here and on backend JSON to string??
-                // const recipe = JSON.stringify(res);
-                // updateRecipe(recipe.data)
-
-                // BYĆ MOŻE AXIOS JUŻ ZROBIŁ STRINGIFY I TRZEBA TYLKO NA BACKENDZIE?
-
-                console.log("server response recipes list", res.data);
                 updateRecipesList(res.data);
                 changeLoading(false);
             });
@@ -42,7 +35,6 @@ const RecipesList = () => {
                             exact
                             to={`/recipe/${elem.id}`}
                             className="recipes-list-item"
-                            // activeClassName="selected"
                             key={elem.id}
                         >
                             <RecipeCard

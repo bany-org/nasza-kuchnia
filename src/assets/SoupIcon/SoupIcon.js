@@ -10,10 +10,10 @@ const SoupIcon = () => {
         >
             <g
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 stroke="#000"
-                stroke-linecap="round"
-                stroke-width="1.5"
+                strokeLinecap="round"
+                strokeWidth="1.5"
             >
                 <path
                     d="M15.13 0c0 .66-.453 1.195-1.01 1.195h-2.093C10.909 1.195 10 2.272 10 3.598 10 4.923 10.909 6 12.027 6H17"
@@ -21,19 +21,19 @@ const SoupIcon = () => {
                 />
                 <path
                     fill="#FFB803"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                     d="M36 13v1.426C36 23.58 27.94 31 18 31 8.059 31 0 23.58 0 14.426V13h36z"
                     transform="translate(1 1)"
                 />
                 <path
                     fill="#FFF"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                     d="M27.89 10.517c1.003.13 1.955.28 2.838.454 7.03 1.38 7.03 3.616 0 4.994-7.03 1.38-18.427 1.38-25.456 0-7.03-1.379-7.03-3.615 0-4.994 2.647-.52 5.912-.843 9.33-.971"
                     transform="translate(1 1)"
                 />
                 <path
                     fill="#FFF"
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                     d="M13.287 13c-2.934.13-5.713.4-8.008.807-2.051.364-3.475.797-4.279 1.257.866.378 2.18.732 3.95 1.038 6.93 1.197 18.17 1.197 25.1 0 1.77-.306 3.084-.66 3.95-1.038-.804-.46-2.228-.894-4.279-1.257-1.184-.21-2.497-.384-3.894-.52-.495-.049-1-.092-1.513-.131"
                     transform="translate(1 1)"
                 />
@@ -42,7 +42,7 @@ const SoupIcon = () => {
                     transform="translate(1 1)"
                 />
                 <path
-                    stroke-linejoin="round"
+                    strokeLinejoin="round"
                     d="M8.261 23.294c1.363 1.674 3.327 2.966 5.712 3.578 2.618.672 5.29.409 7.583-.569"
                     transform="translate(1 1)"
                 />

@@ -10,11 +10,11 @@ const SaladIcon = () => {
         >
             <g
                 fill="none"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 stroke="#000"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="1.5"
             >
                 <path
                     fill="#FFF"
