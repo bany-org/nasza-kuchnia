@@ -8,7 +8,7 @@ const FastfoodIcon = () => {
             height="15"
             viewBox="0 0 40 30"
         >
-            <g fill="none" fill-rule="evenodd" stroke="#000" stroke-width="1.5">
+            <g fill="none" fillRule="evenodd" stroke="#000" strokeWidth="1.5">
                 <path
                     fill="#FFF"
                     d="M36.457 19H1.543C.69 19 0 19.65 0 20.452 0 24.62 3.59 28 8.02 28h21.96c4.43 0 8.02-3.38 8.02-7.548C38 19.65 37.31 19 36.457 19z"
@@ -30,8 +30,8 @@ const FastfoodIcon = () => {
                     transform="translate(1 1)"
                 />
                 <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                     d="M4.376 8.779c.234-.31.529-.613.879-.908m14.378-4.704c-1.72-.277-3.8-.236-5.982.188-2.396.466-4.503 1.313-6.041 2.335"
                     transform="translate(1 1)"
                 />
