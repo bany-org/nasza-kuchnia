@@ -18,13 +18,13 @@ const RecipeContetHeader = (props) => {
     return (
         <div className="recipe-content-header">
             <div className="recipe-content__image">
-                {props.id === "1" && <SaladPlaceholder />}
-                {props.id === "2" && <CakePlaceholder />}
-                {props.id === "3" && <HamburgerPlaceholder />}
-                {props.id === "4" && <SoupPlaceholder />}
-                {props.id === "5" && <CupcakePlaceholder />}
-                {props.id === "6" && <MealPlaceholder />}
-                {props.id === "7" && <DishPlaceholder />}
+                {props.data.type === "salad" && <SaladPlaceholder />}
+                {props.data.type === "cake" && <CakePlaceholder />}
+                {props.data.type === "fastfood" && <HamburgerPlaceholder />}
+                {props.data.type === "soup" && <SoupPlaceholder />}
+                {props.data.type === "cupcake" && <CupcakePlaceholder />}
+                {props.data.type === "meal" && <MealPlaceholder />}
+                {props.data.type === "dish" && <DishPlaceholder />}
             </div>
             <div className="recipe-content-header--info">
                 <div className="recipe-content-header--name">
