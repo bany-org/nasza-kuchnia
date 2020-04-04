@@ -3,6 +3,12 @@ import { NavLink } from "react-router-dom";
 
 import "./NavbarButton.css";
 
+const STYLES = {
+    GRAY: "navbar-button__gray",
+    BLUE: "navbar-button__blue",
+    DEFAULT: "navbar-button",
+};
+
 const NavbarButton = (props) => {
     return (
         <NavLink
@@ -11,7 +17,7 @@ const NavbarButton = (props) => {
             className="navlink"
         >
             <button
-                className="navbar-button"
+                className={props.style || STYLES.DEFAULT}
                 type="button"
                 disabled={props.disabled}
             >
@@ -26,5 +32,7 @@ const NavbarButton = (props) => {
         </NavLink>
     );
 };
+
+NavbarButton.styles = STYLES;
 
 export default NavbarButton;

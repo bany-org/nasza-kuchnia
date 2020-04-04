@@ -14,16 +14,21 @@
     overflow: hidden;
 }
 
-.recipes-list--logo {
+.recipes-list-header {
     padding: 10px;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.recipes-list--title {
+.recipes-list-header--logo {
+}
+
+.recipes-list-header--title {
     width: 123px;
     height: 36px;
     object-fit: contain;
     font-family: Pacifico;
-    font-size: 40px;
+    font-size: 20px;
     font-weight: normal;
     font-stretch: normal;
     font-style: normal;
