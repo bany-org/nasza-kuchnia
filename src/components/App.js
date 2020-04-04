@@ -3,6 +3,7 @@ import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import Recipe from "./Recipe/Recipe";
 import RecipesList from "./RecipesList/RecipesList";
+import LoginForm from "./LoginForm/LoginForm";
 
 import "./App.css";
 
@@ -14,6 +15,9 @@ function App() {
                     <Route exact path="/">
                         <RecipesList />
                         {/* HOME?  */}
+                    </Route>
+                    <Route exact path="/login">
+                        <LoginForm />
                     </Route>
                     <Route exact path="/recipes">
                         <RecipesList />

@@ -4,17 +4,17 @@ const AddIcon = () => {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="17"
-            height="17"
+            // width="17"
+            height="28"
             viewBox="0 0 35 35"
         >
-            <g fill="none" fill-rule="evenodd">
+            <g fill="none" fillRule="evenodd">
                 <circle cx="17.5" cy="17.5" r="17.5" fill="#FFCD32" />
                 <g
                     stroke="#000"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                 >
                     <path
                         d="M8.5 0v17V0zM0 8.5h17"
