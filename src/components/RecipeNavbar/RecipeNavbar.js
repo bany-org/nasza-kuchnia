@@ -12,7 +12,7 @@ const RecipeNavbar = () => {
     return (
         <div className="recipe-navbar">
             <NavbarButton
-                to="/recipes"
+                path="/recipes"
                 exact
                 label="Wróć do listy przepisów"
                 icon={<BackArrow />}
