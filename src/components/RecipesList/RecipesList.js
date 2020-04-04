@@ -4,12 +4,12 @@ import axios from "axios";
 
 import RecipeCard from "../RecipeCard/RecipeCard";
 import NavbarButton from "../NavbarButton/NavbarButton";
-import Logo from "../../assets/Logo/Logo";
 import AddIcon from "../../assets/AddIcon/AddIcon";
 import FilterIcon from "../../assets/FilterIcon/FilterIcon";
 import SearchIcon from "../../assets/SearchIcon/SearchIcon";
 
 import "./RecipesList.css";
+import PersonIcon from "../../assets/PersonIcon/PersonIcon";
 
 const RecipesList = () => {
     const [recipesList, updateRecipesList] = useState({});
@@ -28,15 +28,16 @@ const RecipesList = () => {
     return (
         <div className="recipes-list">
             <div className="recipes-list-header">
-                <div className="recipes-list-header--logo">
+                {/* <div className="recipes-list-header--logo">
                     <Logo />
-                </div>
+                </div> */}
                 <span className="recipes-list-header--title">
                     Nasza kuchnia
                 </span>
                 <NavbarButton
                     style={NavbarButton.styles.GRAY}
                     icon={<AddIcon />}
+                    path="/login"
                 ></NavbarButton>
                 <NavbarButton
                     style={NavbarButton.styles.GRAY}
@@ -45,6 +46,11 @@ const RecipesList = () => {
                 <NavbarButton
                     style={NavbarButton.styles.GRAY}
                     icon={<SearchIcon />}
+                ></NavbarButton>
+                <NavbarButton
+                    style={NavbarButton.styles.GRAY}
+                    icon={<PersonIcon />}
+                    path="/user"
                 ></NavbarButton>
             </div>
             {isLoading && <div>spinner</div>}
