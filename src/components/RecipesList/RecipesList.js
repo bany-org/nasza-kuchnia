@@ -3,7 +3,11 @@ import { NavLink } from "react-router-dom";
 import axios from "axios";
 
 import RecipeCard from "../RecipeCard/RecipeCard";
+import NavbarButton from "../NavbarButton/NavbarButton";
 import Logo from "../../assets/Logo/Logo";
+import AddIcon from "../../assets/AddIcon/AddIcon";
+import FilterIcon from "../../assets/FilterIcon/FilterIcon";
+import SearchIcon from "../../assets/SearchIcon/SearchIcon";
 
 import "./RecipesList.css";
 
@@ -23,9 +27,25 @@ const RecipesList = () => {
 
     return (
         <div className="recipes-list">
-            <div className="recipes-list--logo">
-                <Logo />
-                <span className="recipes-list--title">Nasza kuchnia</span>
+            <div className="recipes-list-header">
+                <div className="recipes-list-header--logo">
+                    <Logo />
+                </div>
+                <span className="recipes-list-header--title">
+                    Nasza kuchnia
+                </span>
+                <NavbarButton
+                    style={NavbarButton.styles.GRAY}
+                    icon={<AddIcon />}
+                ></NavbarButton>
+                <NavbarButton
+                    style={NavbarButton.styles.GRAY}
+                    icon={<FilterIcon />}
+                ></NavbarButton>
+                <NavbarButton
+                    style={NavbarButton.styles.GRAY}
+                    icon={<SearchIcon />}
+                ></NavbarButton>
             </div>
             {isLoading && <div>spinner</div>}
             {!isLoading &&
