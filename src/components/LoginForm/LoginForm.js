@@ -1,5 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+
+import { UserContext } from "../../contexts/UserContext";
 
 import NavbarButton from "../NavbarButton/NavbarButton";
 import BackArrow from "../../assets/BackArrow/BackArrow";
@@ -15,6 +17,7 @@ const LoginForm = () => {
     const [error, setError] = useState(false);
 
     const history = useHistory();
+    const UserCTX = useContext(UserContext);
 
     useEffect(() => {
         if (login.trim() && password.trim()) {
@@ -26,9 +29,10 @@ const LoginForm = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        if (login === "abc" && password === "123") {
+        if (login === "tester1" && password === "abc123") {
             setError(false);
             // setHelperText("Zalogowano");
+            UserCTX.setLoggedIn({ userName: "TESTER 1", userRecipes: [1, 2] });
             history.push("/recipes");
         } else {
             setError(true);
