@@ -1,5 +1,5 @@
 .login-form {
-    /* height: 100vh; */
+    min-height: 100%;
     border: solid 1px #979797;
     background: linear-gradient(#ffb803 50%, #f6f1e9 50%);
 }

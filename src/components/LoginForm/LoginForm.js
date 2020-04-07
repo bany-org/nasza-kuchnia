@@ -94,7 +94,7 @@ const LoginForm = () => {
             <div className="login-form-main__button">
                 <button
                     className="login-form-main__button--registration"
-                    disabled
+                    onClick={() => history.push("/registration")}
                 >
                     Załóż konto
                 </button>
