@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { useHistory } from "react-router-dom";
 
 import { UserContext } from "../../contexts/UserContext";
 
@@ -8,6 +9,8 @@ import BackArrow from "../../assets/BackArrow/BackArrow";
 const UserPage = () => {
     const UserCTX = useContext(UserContext);
 
+    const history = useHistory();
+    // history.push("/recipes");
     return (
         <div>
             <NavbarButton
@@ -20,7 +23,16 @@ const UserPage = () => {
             <p>moje przepisy</p>
             <ul>
                 {UserCTX?.userRecipes.map((elem) => {
-                    return <li key={elem}>{elem}</li>;
+                    return (
+                        <li key={elem}>
+                            <button
+                                type="button"
+                                onClick={() => history.push(`recipe/${elem}`)}
+                            >
+                                Przepis {elem}
+                            </button>
+                        </li>
+                    );
                 })}
             </ul>
             <p>
