@@ -16,11 +16,7 @@ const RemoveRecipePage = () => {
                 label="Wróć"
                 icon={<BackArrow />}
             />
-            <h3>Usuwanie przepisu</h3>
-            <p>
-                Ta czynność nie może zostać cofnięta, jakieś przyciski, może
-                dodam jakieś proste zadanie żeby potwierdzić
-            </p>
+            <h3>Usuwanie przepisu jeszcze nie jest dostępne</h3>
         </div>
     );
 };

@@ -23,20 +23,16 @@ const RecipeNavbar = () => {
 
     useEffect(() => {
         if (userRecipes.indexOf(parseInt(id)) !== -1) {
-            console.log("zmiana na true");
-
             setIsUserRecipe(true);
         }
     }, [userRecipes, id]);
-
-    console.log("czy to moje", isUserRecipe);
 
     return (
         <div className="recipe-navbar">
             <NavbarButton
                 path="/recipes"
                 exact
-                label="Wróć do listy przepisów"
+                label="Wróć do listy"
                 icon={<BackArrow />}
             ></NavbarButton>
             <NavbarButton

@@ -1,7 +1,7 @@
 .recipes-list-navbar {
     padding: 10px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .recipes-list-navbar__title {

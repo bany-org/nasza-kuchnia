@@ -1,48 +1,54 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 
 import { UserContext } from "../../contexts/UserContext";
 
-import NavbarButton from "../NavbarButton/NavbarButton";
-import BackArrow from "../../assets/BackArrow/BackArrow";
+import RecipeNavbar from "../RecipeNavbar/RecipeNavbar";
+
+import "./UserPage.css";
 
 const UserPage = () => {
     const UserCTX = useContext(UserContext);
 
+    useEffect(() => {
+        if (!UserCTX.loggedIn) {
+            history.push("login/");
+        }
+    }, []);
+
     const history = useHistory();
-    // history.push("/recipes");
+
     return (
         <div>
-            <NavbarButton
-                path="/recipes"
-                label="Wróć do strony głównej"
-                icon={<BackArrow />}
-            />
-            <h2>Witaj: {UserCTX.userName}</h2>
-            <h3>Jakieś info o użytkowniku - imię itp</h3>
-            <p>moje przepisy</p>
-            <ul>
+            <RecipeNavbar />
+            <div className="user-page">
+                <h2>Witaj: {UserCTX.userName}</h2>
+                <p>Twoje przepisy</p>
                 {UserCTX?.userRecipes.map((elem) => {
                     return (
-                        <li key={elem}>
-                            <button
-                                type="button"
-                                onClick={() => history.push(`recipe/${elem}`)}
-                            >
-                                Przepis {elem}
-                            </button>
-                        </li>
+                        <button
+                            type="button"
+                            className="user-page__recipe-link"
+                            onClick={() => history.push(`recipe/${elem}`)}
+                        >
+                            Przepis {elem}
+                        </button>
                     );
                 })}
-            </ul>
-            <p>
-                później może info o ilości przepisów które dodaliśmy, może
-                jakieś linki do tych przepisów. Tochyba akurat spoko żeby sobie
-                coś ugotować ze SWOICH przepisów
-            </p>
-            <button type="button" onClick={UserCTX.logoutUser}>
-                Wyloguj
-            </button>
+                <p>
+                    ulubione przepisy nie są dostępne w wersji demonstracyjnej
+                </p>
+                <button
+                    type="button"
+                    onClick={() => {
+                        UserCTX.logoutUser();
+                        history.push("/recipes");
+                    }}
+                    className="user-page__recipe-link--logout"
+                >
+                    Wyloguj
+                </button>
+            </div>
         </div>
     );
 };

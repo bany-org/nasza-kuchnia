@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 import RecipeNavbar from "../RecipeNavbar/RecipeNavbar";
-import RecipeContentHeader from "../RecipeContentHeader/RecipeContetHeader";
 import RecipeContentMain from "../RecipeContentMain/RecipeContentMain";
 
 import RecipeSkeleton from "./Recipe.components";
@@ -37,10 +36,6 @@ const Recipe = () => {
                             generalData={recipe.generalData}
                             style={RecipeCard.STYLES.RECIPE_OPEN}
                         />
-                        {/* <RecipeContentHeader
-                            data={recipe.generalData}
-                            id={recipe.id}
-                        /> */}
                         <RecipeContentMain data={recipe.recipeMain} />
                     </>
                 )}

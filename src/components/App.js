@@ -8,9 +8,10 @@ import LoginInfoPage from "./LoginInfoPage/LoginInfoPage";
 import UserPage from "./UserPage/UserPage";
 import NewRecipe from "./NewRecipe/NewRecipe";
 import RemoveRecipePage from "./RemoveRecipePage/RemoveRecipePage";
+import RegistrationForm from "./RegistrationForm/RegistrationForm";
+import EditRecipe from "./EditRecipe/EditRecipe";
 
 import "./App.css";
-import EditRecipe from "./EditRecipe/EditRecipe";
 
 function App() {
     return (
@@ -26,6 +27,9 @@ function App() {
                     </Route>
                     <Route exact path="/login/info">
                         <LoginInfoPage />
+                    </Route>
+                    <Route exact path="/registration">
+                        <RegistrationForm />
                     </Route>
                     <Route exact path="/user">
                         <UserPage />

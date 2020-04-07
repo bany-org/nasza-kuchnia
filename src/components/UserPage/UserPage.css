@@ -1,0 +1,28 @@
+.user-page {
+    background-color: lightgoldenrodyellow;
+    height: 100%;
+}
+
+.user-page__recipe-link {
+    background-color: #4caf50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+}
+
+.user-page__recipe-link--logout {
+    background-color: #a009be; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+}
