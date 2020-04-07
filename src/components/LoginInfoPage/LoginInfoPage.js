@@ -11,7 +11,7 @@ const LoginInfoPage = () => {
                 label="Wróć do strony głównej"
                 icon={<BackArrow />}
             />
-            <h3>Aby dodawać przepisy musisz się zalogować</h3>
+            <h3>Dodawanie przepisu jeszcze nie jest dostępne</h3>
         </div>
     );
 };

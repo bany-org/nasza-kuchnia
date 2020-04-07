@@ -11,7 +11,7 @@ const NewRecipe = () => {
                 label="Wróć do strony głównej"
                 icon={<BackArrow />}
             />
-            <h3>Tutaj dodajemy nowy przepis</h3>
+            <h3>Dodawanie przepisu jeszcze nie jest dostępne</h3>
         </div>
     );
 };

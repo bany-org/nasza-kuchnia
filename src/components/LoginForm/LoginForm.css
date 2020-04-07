@@ -1,5 +1,5 @@
 .login-form {
-    height: 100vh;
+    /* height: 100vh; */
     border: solid 1px #979797;
     background: linear-gradient(#ffb803 50%, #f6f1e9 50%);
 }
@@ -125,4 +125,21 @@
     font-stretch: normal;
     font-style: normal;
     color: #003a57;
+}
+
+.login-form-main__button--registration {
+    border-radius: 44.5px;
+    min-width: 200px;
+    height: 45px;
+    border: solid 2px #ffffff;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #003a57;
+    margin: 20px;
 }

@@ -91,8 +91,13 @@ const LoginForm = () => {
                 </form>
                 <div className="login-form-main__info">{helperText}</div>
             </div>
-            <div className="login-form-registration">
-                <button>Załóż konto</button>
+            <div className="login-form-main__button">
+                <button
+                    className="login-form-main__button--registration"
+                    disabled
+                >
+                    Załóż konto
+                </button>
             </div>
         </div>
     );
