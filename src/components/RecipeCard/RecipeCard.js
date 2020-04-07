@@ -19,67 +19,81 @@ import CupcakePlaceholder from "../../assets/CupcakePlaceholder/CupcakePlacehold
 import MealPlaceholder from "../../assets/MealPlaceholder/MealPlaceholder";
 import DishPlaceholder from "../../assets/DishPlaceholder/DishPlaceholder";
 
+import { RECIPE_TYPES } from "../../constants";
+import { RECIPE_TYPES_TRANSLATIONS } from "../../i18n";
+
 import "./RecipeCard.css";
 
-const RecipeCard = ({ recipe }) => {
+const STYLES = {
+    LIST_CARD: "recipe-card-list",
+    RECIPE_OPEN: "recipe-card-open",
+};
+
+const RecipeCard = ({ generalData, style = STYLES.LIST_CARD }) => {
     return (
-        <div className="recipe-card">
+        <div className={style}>
             <div className="recipe-card__image">
-                {recipe.generalData.type === "salad" && <SaladPlaceholder />}
-                {recipe.generalData.type === "cake" && <CakePlaceholder />}
-                {recipe.generalData.type === "fastfood" && (
+                {generalData.type === RECIPE_TYPES.SALAD && (
+                    <SaladPlaceholder />
+                )}
+                {generalData.type === RECIPE_TYPES.CAKE && <CakePlaceholder />}
+                {generalData.type === RECIPE_TYPES.FASTFOOD && (
                     <HamburgerPlaceholder />
                 )}
-                {recipe.generalData.type === "soup" && <SoupPlaceholder />}
-                {recipe.generalData.type === "cupcake" && (
+                {generalData.type === RECIPE_TYPES.SOUP && <SoupPlaceholder />}
+                {generalData.type === RECIPE_TYPES.CUPCAKE && (
                     <CupcakePlaceholder />
                 )}
-                {recipe.generalData.type === "meal" && <MealPlaceholder />}
-                {recipe.generalData.type === "dish" && <DishPlaceholder />}
+                {generalData.type === RECIPE_TYPES.MEAL && <MealPlaceholder />}
+                {generalData.type === RECIPE_TYPES.DISH && <DishPlaceholder />}
             </div>
 
-            <div className="recipe-card--info">
-                <div className="recipe-card--name">
-                    {recipe.generalData.name}
+            <div className="recipe-card__content">
+                <div className="recipe-card__recipe-name">
+                    {generalData.name}
                 </div>
-                <div className="recipe-card__meta">
-                    <span className="recipe-card__meta--time">
+                <div className="recipe-card__recipe-meta">
+                    <span className="recipe-card__recipe-meta-element">
                         <ClockIcon />
                     </span>
-                    <span className="recipe-card__meta--time">
-                        {recipe.generalData.time}
+                    <span className="recipe-card__recipe-meta-element">
+                        {generalData.time}
                     </span>
-                    <span className="recipe-card__meta--separator">|</span>
-                    <span className="recipe-card__meta--time">
+                    <span>|</span>
+                    <span className="recipe-card__recipe-meta-element">
                         <FaceIcon />
                     </span>
-                    <span className="recipe-card__meta--time">
-                        {`dla ${recipe.generalData.people}`}
+                    <span className="recipe-card__recipe-meta-element">
+                        {`${generalData.people}`}
                     </span>
-                    <span className="recipe-card__meta--separator">|</span>
-                    <span className="recipe-card__meta--time">
-                        {recipe.generalData.type === "salad" && <SaladIcon />}
-                        {recipe.generalData.type === "cake" && <CakeIcon />}
-                        {recipe.generalData.type === "fastfood" && (
+                    <span>|</span>
+                    <span className="recipe-card__recipe-meta-element">
+                        {generalData.type === RECIPE_TYPES.SALAD && (
+                            <SaladIcon />
+                        )}
+                        {generalData.type === RECIPE_TYPES.CAKE && <CakeIcon />}
+                        {generalData.type === RECIPE_TYPES.FASTFOOD && (
                             <FastfoodIcon />
                         )}
-                        {recipe.generalData.type === "soup" && <SoupIcon />}
-                        {recipe.generalData.type === "cupcake" && (
+                        {generalData.type === RECIPE_TYPES.SOUP && <SoupIcon />}
+                        {generalData.type === RECIPE_TYPES.CUPCAKE && (
                             <CupcakeIcon />
                         )}
-                        {recipe.generalData.type === "meal" && <MealIcon />}
-                        {recipe.generalData.type === "dish" && <DishIcon />}
+                        {generalData.type === RECIPE_TYPES.MEAL && <MealIcon />}
+                        {generalData.type === RECIPE_TYPES.DISH && <DishIcon />}
                     </span>
-                    <span className="recipe-card__meta--time">
-                        {recipe.generalData.type}
+                    <span className="recipe-card__recipe-meta-element">
+                        {RECIPE_TYPES_TRANSLATIONS[generalData.type]}
                     </span>
                 </div>
-                <div className="recipe-card__meta--time">
-                    <span>{`Autor: ${recipe.generalData.author}`}</span>
+                <div className="recipe-card__recipe-meta-element">
+                    <span>{`Autor: ${generalData.author}`}</span>
                 </div>
             </div>
         </div>
     );
 };
+
+RecipeCard.STYLES = STYLES;
 
 export default RecipeCard;
