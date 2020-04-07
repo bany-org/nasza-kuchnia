@@ -7,7 +7,6 @@ import BackArrow from "../../assets/BackArrow/BackArrow";
 const EditRecipe = () => {
     const { id } = useParams();
 
-    console.log("w remowie id", id);
     return (
         <div>
             <NavbarButton
