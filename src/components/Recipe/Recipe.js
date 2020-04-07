@@ -8,6 +8,7 @@ import RecipeContentMain from "../RecipeContentMain/RecipeContentMain";
 
 import RecipeSkeleton from "./Recipe.components";
 import "./Recipe.css";
+import RecipeCard from "../RecipeCard/RecipeCard";
 
 const Recipe = () => {
     const [recipe, updateRecipe] = useState({});
@@ -32,10 +33,14 @@ const Recipe = () => {
                     <RecipeSkeleton />
                 ) : (
                     <>
-                        <RecipeContentHeader
+                        <RecipeCard
+                            generalData={recipe.generalData}
+                            style={RecipeCard.STYLES.RECIPE_OPEN}
+                        />
+                        {/* <RecipeContentHeader
                             data={recipe.generalData}
                             id={recipe.id}
-                        />
+                        /> */}
                         <RecipeContentMain data={recipe.recipeMain} />
                     </>
                 )}
