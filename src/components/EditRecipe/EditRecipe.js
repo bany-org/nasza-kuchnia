@@ -14,8 +14,7 @@ const EditRecipe = () => {
                 label="Wróć"
                 icon={<BackArrow />}
             />
-            <h3>Edycja przepisu</h3>
-            <p>już jestem zmęczony - jutro dalej</p>
+            <h3>Edycja przepisu jeszcze nie jest dostępna</h3>
         </div>
     );
 };
