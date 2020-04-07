@@ -89,7 +89,7 @@ const RecipeContentMain = ({ data }) => {
                                 onClick={(e) => addToState(e)}
                                 className={myClass}
                             >
-                                {`${elem.name} ${elem.quantity} ${elem.unit}`}
+                                {`${elem.name}`}
                                 <div className="path" onClick={stop}></div>
                             </li>
                         );
