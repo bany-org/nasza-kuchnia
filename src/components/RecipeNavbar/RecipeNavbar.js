@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useRouteMatch } from "react-router-dom";
 
 import { UserContext } from "../../contexts/UserContext";
 
@@ -16,10 +16,15 @@ const RecipeNavbar = () => {
     const [isUserRecipe, setIsUserRecipe] = useState(false);
     const UserCTX = useContext(UserContext);
     const { loggedIn, userRecipes } = UserCTX;
+
     const path = loggedIn ? "/new/recipe" : "/login/info";
     const userPagePath = loggedIn ? "/user" : "/login";
 
     const { id } = useParams();
+    const isRemoveView = useRouteMatch("/remove");
+    const isEditView = useRouteMatch("/edit");
+    const returnPath =
+        isRemoveView || isEditView ? `/recipe/${id}` : "/recipes";
 
     useEffect(() => {
         if (userRecipes.indexOf(parseInt(id)) !== -1) {
@@ -30,9 +35,9 @@ const RecipeNavbar = () => {
     return (
         <div className="recipe-navbar">
             <NavbarButton
-                path="/recipes"
+                path={returnPath}
                 exact
-                label="Wróć do listy"
+                label="Wróć"
                 icon={<BackArrow />}
             ></NavbarButton>
             <NavbarButton

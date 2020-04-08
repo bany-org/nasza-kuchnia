@@ -1,10 +1,9 @@
 .user-page {
-    background-color: lightgoldenrodyellow;
     height: 100%;
 }
 
 .user-page__recipe-link {
-    background-color: #4caf50; /* Green */
+    background-color: #ffb803; /* Green */
     border: none;
     color: white;
     padding: 10px 20px;
@@ -16,7 +15,7 @@
 }
 
 .user-page__recipe-link--logout {
-    background-color: #a009be; /* Green */
+    background-color: #003a57; /* Green */
     border: none;
     color: white;
     padding: 10px 20px;
