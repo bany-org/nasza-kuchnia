@@ -31,13 +31,15 @@ const LoginForm = () => {
         e.preventDefault();
         if (login === "tester1" && password === "abc123") {
             setError(false);
-            // setHelperText("Zalogowano");
             UserCTX.setLoggedIn({ userName: "TESTER 1", userRecipes: [] });
             history.push("/user");
         } else if (login === "dominika" && password === "domi123") {
             setError(false);
-            // setHelperText("Zalogowano");
             UserCTX.setLoggedIn({ userName: "Dominika", userRecipes: [8] });
+            history.push("/user");
+        } else if (login === "sandrakn" && password === "sendi123") {
+            setError(false);
+            UserCTX.setLoggedIn({ userName: "Sandra", userRecipes: [9, 10] });
             history.push("/user");
         } else {
             setError(true);

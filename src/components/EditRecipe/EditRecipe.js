@@ -1,19 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 
-import NavbarButton from "../NavbarButton/NavbarButton";
-import BackArrow from "../../assets/BackArrow/BackArrow";
+import RecipeNavbar from "../RecipeNavbar/RecipeNavbar";
 
 const EditRecipe = () => {
     const { id } = useParams();
 
     return (
         <div>
-            <NavbarButton
-                path={`/recipe/${id}`}
-                label="Wróć"
-                icon={<BackArrow />}
-            />
+            <RecipeNavbar />
             <h3>Edycja przepisu jeszcze nie jest dostępna</h3>
         </div>
     );
