@@ -6,7 +6,7 @@ const RegistrationForm = () => {
     return (
         <>
             <RecipeNavbar />
-            <h3>Rejestracja nie jest dostępne w wersji demonstracyjnej</h3>
+            <h3>Rejestracja nie jest dostępna w wersji demonstracyjnej</h3>
         </>
     );
 };
