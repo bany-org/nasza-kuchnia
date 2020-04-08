@@ -24,7 +24,7 @@ const RecipeNavbar = () => {
     const isRemoveView = useRouteMatch("/remove");
     const isEditView = useRouteMatch("/edit");
     const returnPath =
-        isRemoveView || isEditView ? `/recipe/${id}` : "recipes/";
+        isRemoveView || isEditView ? `/recipe/${id}` : "/recipes";
 
     useEffect(() => {
         if (userRecipes.indexOf(parseInt(id)) !== -1) {
