@@ -3,6 +3,7 @@
     min-height: 120px;
     display: flex;
     border-radius: 20px;
+    margin-bottom: 10px;
 }
 
 .recipe-card-open {

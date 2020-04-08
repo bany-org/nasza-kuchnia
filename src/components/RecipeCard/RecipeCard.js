@@ -87,7 +87,7 @@ const RecipeCard = ({ generalData, style = STYLES.LIST_CARD }) => {
                     </span>
                 </div>
                 <div className="recipe-card__recipe-meta-element">
-                    <span>{`Autor: ${generalData.author}`}</span>
+                    <span>{`Dodała: ${generalData.author}`}</span>
                 </div>
             </div>
         </div>
