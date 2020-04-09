@@ -41,6 +41,18 @@ const LoginForm = () => {
             setError(false);
             UserCTX.setLoggedIn({ userName: "Sandra", userRecipes: [9, 10] });
             history.push("/user");
+        } else if (login === "martabk" && password === "dusia123") {
+            setError(false);
+            UserCTX.setLoggedIn({ userName: "Marta", userRecipes: [11] });
+            history.push("/user");
+        } else if (login === "patrycjaza" && password === "pati123") {
+            setError(false);
+            UserCTX.setLoggedIn({ userName: "Patrycja", userRecipes: [12] });
+            history.push("/user");
+        } else if (login === "aniapk" && password === "pytlix") {
+            setError(false);
+            UserCTX.setLoggedIn({ userName: "Ania", userRecipes: [13] });
+            history.push("/user");
         } else {
             setError(true);
             setHelperText("Nieprawidłowy login lub hasło");
