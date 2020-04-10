@@ -48,7 +48,11 @@ const RecipeCard = ({ generalData, style = STYLES.LIST_CARD }) => {
                 {generalData.type === RECIPE_TYPES.DISH && <DishPlaceholder />}
             </div>
 
-            <div className="recipe-card__content">
+            <div
+                className={`recipe-card__content${
+                    style === "recipe-card-list" ? "--list" : "--open"
+                }`}
+            >
                 <div className="recipe-card__recipe-name">
                     {generalData.name}
                 </div>

@@ -11,7 +11,7 @@ import RemoveRecipePage from "./RemoveRecipePage/RemoveRecipePage";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import EditRecipe from "./EditRecipe/EditRecipe";
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
     return (

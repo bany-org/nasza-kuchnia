@@ -7,7 +7,7 @@ import NavbarButton from "../NavbarButton/NavbarButton";
 import BackArrow from "../../assets/BackArrow/BackArrow";
 import MessImage from "../../assets/MessImage/MessImage";
 
-import "./LoginForm.css";
+import "./LoginForm.scss";
 
 const LoginForm = () => {
     const [login, setLogin] = useState("");
@@ -52,6 +52,10 @@ const LoginForm = () => {
         } else if (login === "aniapk" && password === "pytlix") {
             setError(false);
             UserCTX.setLoggedIn({ userName: "Ania", userRecipes: [13] });
+            history.push("/user");
+        } else if (login === "kasiasr" && password === "kasia123") {
+            setError(false);
+            UserCTX.setLoggedIn({ userName: "Kasia", userRecipes: [14, 15] });
             history.push("/user");
         } else {
             setError(true);
