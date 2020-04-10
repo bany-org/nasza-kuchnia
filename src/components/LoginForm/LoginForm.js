@@ -53,6 +53,10 @@ const LoginForm = () => {
             setError(false);
             UserCTX.setLoggedIn({ userName: "Ania", userRecipes: [13] });
             history.push("/user");
+        } else if (login === "kasiasr" && password === "kasia123") {
+            setError(false);
+            UserCTX.setLoggedIn({ userName: "Kasia", userRecipes: [14, 15] });
+            history.push("/user");
         } else {
             setError(true);
             setHelperText("Nieprawidłowy login lub hasło");
