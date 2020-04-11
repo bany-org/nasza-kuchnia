@@ -43,7 +43,8 @@ const RecipeNavbar = () => {
             <NavbarButton
                 icon={<AddIcon />}
                 path={path}
-                style={NavbarButton.styles.GRAY}
+                // style={NavbarButton.styles.GRAY}
+                color="gray"
             ></NavbarButton>
             {loggedIn && isUserRecipe && (
                 <>
@@ -60,7 +61,8 @@ const RecipeNavbar = () => {
             <NavbarButton
                 icon={<PersonIcon />}
                 path={userPagePath}
-                style={NavbarButton.styles.GRAY}
+                // style={NavbarButton.styles.GRAY}
+                color="gray"
             ></NavbarButton>
         </div>
     );
