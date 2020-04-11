@@ -1,6 +1,8 @@
 import React from "react";
 import { HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
+import styled from "styled-components";
+
 import Recipe from "./Recipe/Recipe";
 import RecipesList from "./RecipesList/RecipesList";
 import LoginForm from "./LoginForm/LoginForm";
@@ -11,12 +13,22 @@ import RemoveRecipePage from "./RemoveRecipePage/RemoveRecipePage";
 import RegistrationForm from "./RegistrationForm/RegistrationForm";
 import EditRecipe from "./EditRecipe/EditRecipe";
 
-import "./App.css";
+const Body = styled.div`
+    margin: 0;
+    min-height: 100vh;
+    background-color: #f6f1e9;
+
+    @media (min-width: 1000px) {
+        background-color: pink;
+    }
+`;
+
+// import "./App.css";
 
 function App() {
     return (
         <HashRouter basename="/">
-            <div className="App">
+            <Body>
                 <Switch>
                     <Route exact path="/">
                         <RecipesList />
@@ -51,7 +63,7 @@ function App() {
                     </Route>
                     <Redirect to="/recipes"></Redirect>
                 </Switch>
-            </div>
+            </Body>
         </HashRouter>
     );
 }

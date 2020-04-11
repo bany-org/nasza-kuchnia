@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 import axios from "axios";
 
 import RecipeCard from "../RecipeCard/RecipeCard";
 import RecipesListNavbar from "../RecipesListNavbar/RecipesListNavbar";
 
-import "./RecipesList.css";
+const RecipeListContainder = styled.div`
+    padding: 10px;
+`;
+
+const NavbarLink = styled(NavLink)`
+    text-decoration: none;
+`;
 
 const RecipesList = () => {
     const [recipesList, updateRecipesList] = useState({});
@@ -22,14 +29,14 @@ const RecipesList = () => {
     }, []);
 
     return (
-        <div className="recipes-list">
+        <>
             <RecipesListNavbar />
-            <div className="recipes-list-container">
+            <RecipeListContainder>
                 {isLoading && <div>lodading</div>}
                 {!isLoading &&
                     recipesList.map((elem) => {
                         return (
-                            <NavLink
+                            <NavbarLink
                                 exact
                                 to={`/recipe/${elem.id}`}
                                 className="recipes-list-container__item"
@@ -38,11 +45,11 @@ const RecipesList = () => {
                                 <RecipeCard
                                     generalData={elem.generalData}
                                 ></RecipeCard>
-                            </NavLink>
+                            </NavbarLink>
                         );
                     })}
-            </div>
-        </div>
+            </RecipeListContainder>
+        </>
     );
 };
 
