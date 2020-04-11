@@ -39,7 +39,7 @@ const UserPage = () => {
     const history = useHistory();
 
     return (
-        <div>
+        <>
             <RecipeNavbar />
             <UserPageContent>
                 <h2>Witaj: {UserCTX.userName}</h2>
@@ -66,7 +66,7 @@ const UserPage = () => {
                     Wyloguj
                 </UserPageButton>
             </UserPageContent>
-        </div>
+        </>
     );
 };
 

@@ -1,51 +1,155 @@
 import React, { useState } from "react";
+import styled, { css } from "styled-components";
 
-import "./RecipeContentMain.css";
+const Body = styled.div`
+    min-height: 100%;
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 10px 10px 5px rgba(47, 47, 55, 0.21);
+    border: solid 1px #ffb803;
+    background-color: #dde2e5;
+    color: #000000;
+`;
+
+const RecipeContentButton = styled.button`
+    width: 50%;
+    height: 30px;
+    border: solid 1px #ffb803;
+    background-color: #ffffff;
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    font-weight: bold;
+`;
+
+const Info = styled.div`
+    padding: 11px;
+    opacity: 0.87;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 11px;
+    line-height: 1.11;
+`;
+
+const RecipeContentList = styled.ul`
+    text-align: left;
+    list-style: none;
+    padding: unset;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+`;
+
+const ListItem = styled.li`
+    margin: 10px;
+    padding-left: 10px;
+    width: 90%;
+    min-height: 35px;
+    opacity: 0.77;
+    border-radius: 9px;
+    background-color: #ffffff;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 3.32;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ${(props) =>
+        props.clicked &&
+        css`
+            opacity: 0.5;
+            text-decoration: line-through;
+        `}
+`;
+
+const PreparationListItem = styled.li`
+    margin: 10px;
+    padding-left: 10px;
+    width: 90%;
+    min-height: 35px;
+    opacity: 0.77;
+    border-radius: 9px;
+    background-color: #ffffff;
+    font-family: Nunito Sans, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 3.32;
+    padding-top: 8px;
+    ${(props) =>
+        props.clicked &&
+        css`
+            opacity: 0.5;
+            > div {
+                display: none;
+            }
+        `}
+`;
+
+const CheckMark = styled.div`
+    width: 20px;
+    height: 8px;
+    transform: rotate(-45deg);
+    border-left: solid 3px #000000;
+    border-bottom: solid 3px #000000;
+`;
+
+const PreparationItemHeader = styled.span`
+    font-family: "Playfair Display", serif;
+    font-size: 17px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+`;
+
+const PreparationItemContent = styled.div`
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 15px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.4;
+    letter-spacing: normal;
+    padding-top: 8px;
+    padding-bottom: 8px;
+`;
 
 const RecipeContentMain = ({ data }) => {
     const [ingredientsTab, changeTab] = useState(true);
-    const [clickedIngredientsArray, toggleItem] = useState([]);
-    const [clickedIngredientsArray2, toggleItem2] = useState([]);
+    const [clickedIngredients, updateArray] = useState([]);
+    const [clickedPreparationSteps, updateClickedPreparationSteps] = useState(
+        []
+    );
 
     const changetoTrue = () => changeTab(true);
     const changeTofalse = () => changeTab(false);
 
-    const addToState = (e) => {
+    const toggleClickedIngredients = (e) => {
         const name = e.target?.attributes.name?.value;
-        e.target.classList.toggle("ingredients-list-item--clicked");
-
-        const index = clickedIngredientsArray.indexOf(name);
-        const myarr = [...clickedIngredientsArray];
+        const index = clickedIngredients.indexOf(name);
+        const arraytoUpdate = [...clickedIngredients];
 
         if (index === -1) {
-            toggleItem([...clickedIngredientsArray, name]);
+            updateArray([...arraytoUpdate, name]);
         } else {
-            myarr.splice(index, 1);
-            toggleItem(myarr);
+            arraytoUpdate.splice(index, 1);
+            updateArray(arraytoUpdate);
         }
     };
 
-    const addToState2 = (e) => {
+    const toggleClickedPreparationSteps = (e) => {
         let name = e.target?.attributes.name?.value;
 
         if (name === "child") {
-            e.target.parentElement.classList.toggle(
-                "preparation-list-item--clicked"
-            );
-
             name = e.target.parentElement.attributes.name?.value;
-        } else {
-            e.target.classList.toggle("preparation-list-item--clicked");
         }
 
-        const index = clickedIngredientsArray2.indexOf(name);
-        const myarr = [...clickedIngredientsArray2];
+        const arrayToUpdate = [...clickedPreparationSteps];
+        const index = arrayToUpdate.indexOf(name);
 
         if (index === -1) {
-            toggleItem2([...clickedIngredientsArray2, name]);
+            updateClickedPreparationSteps([...arrayToUpdate, name]);
         } else {
-            myarr.splice(index, 1);
-            toggleItem2(myarr);
+            arrayToUpdate.splice(index, 1);
+            updateClickedPreparationSteps(arrayToUpdate);
         }
     };
 
@@ -55,81 +159,60 @@ const RecipeContentMain = ({ data }) => {
     };
 
     return (
-        <div className="recipe-content-main">
-            <button
-                type="button"
-                onClick={changetoTrue}
-                className="recipe-main-button"
-            >
+        <Body>
+            <RecipeContentButton onClick={changetoTrue}>
                 Składniki
-            </button>
-            <button
-                type="button"
-                onClick={changeTofalse}
-                className="recipe-main-button"
-            >
+            </RecipeContentButton>
+            <RecipeContentButton onClick={changeTofalse}>
                 Przepis
-            </button>
-            <div className="recipe-content-main--info">
+            </RecipeContentButton>
+            <Info>
                 Dotknij składnik, który chcesz wykreśilić bo już go masz
-            </div>
+            </Info>
             {ingredientsTab ? (
-                <ul className="ingredients-list">
+                <RecipeContentList>
                     {data.ingredients.map((elem, i) => {
-                        let myClass = "ingredients-list-item";
-                        if (clickedIngredientsArray.indexOf(elem.name) !== -1) {
-                            myClass =
-                                "ingredients-list-item ingredients-list-item--clicked";
-                        }
-
+                        const clicked =
+                            clickedIngredients.indexOf(elem.name) !== -1;
                         return (
-                            <li
+                            <ListItem
                                 name={elem.name}
                                 key={i}
-                                onClick={(e) => addToState(e)}
-                                className={myClass}
+                                onClick={(e) => toggleClickedIngredients(e)}
+                                clicked={clicked}
                             >
                                 {`${elem.name}`}
-                                <div className="path" onClick={stop}></div>
-                            </li>
+                                {clicked && <CheckMark onClick={stop} />}
+                            </ListItem>
                         );
                     })}
-                </ul>
+                </RecipeContentList>
             ) : (
-                <ul className="ingredients-list">
+                <RecipeContentList>
                     {Object.keys(data.preparation).map((elem) => {
-                        let myClass = "preparation-list-item";
-                        if (clickedIngredientsArray2.indexOf(elem) !== -1) {
-                            myClass =
-                                "preparation-list-item preparation-list-item--clicked";
-                        }
                         return (
-                            <li
+                            <PreparationListItem
                                 key={elem}
                                 name={elem}
-                                onClick={(e) => addToState2(e)}
-                                className={myClass}
+                                onClick={(e) =>
+                                    toggleClickedPreparationSteps(e)
+                                }
+                                clicked={
+                                    clickedPreparationSteps.indexOf(elem) !== -1
+                                }
                             >
-                                <span
-                                    className="preparation-list-item__header"
-                                    // onClick={stop}
-                                    name="child"
-                                >
+                                <PreparationItemHeader name="child">
                                     Krok {elem}
-                                </span>
-                                <div
-                                    className="preparation-list-item__content"
-                                    name="child"
-                                    // onClick={stop}
-                                >
+                                </PreparationItemHeader>
+                                <PreparationItemContent name="child">
                                     {data.preparation[elem]}
-                                </div>
-                            </li>
+                                </PreparationItemContent>
+                            </PreparationListItem>
                         );
                     })}
-                </ul>
+                </RecipeContentList>
             )}
-        </div>
+        </Body>
     );
 };
 

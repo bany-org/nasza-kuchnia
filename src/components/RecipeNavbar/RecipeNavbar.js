@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, useRouteMatch } from "react-router-dom";
+import styled from "styled-components";
 
 import { UserContext } from "../../contexts/UserContext";
 
@@ -8,9 +9,14 @@ import BackArrow from "../../assets/BackArrow/BackArrow";
 import TrashIcon from "../../assets/TrashIcon/TrashIcon";
 import PencilIcon from "../../assets/PencilIcon/PencilIcon";
 import AddIcon from "../../assets/AddIcon/AddIcon";
-
-import "./RecipeNavbar.css";
 import PersonIcon from "../../assets/PersonIcon/PersonIcon";
+
+const Navbar = styled.div`
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
 
 const RecipeNavbar = () => {
     const [isUserRecipe, setIsUserRecipe] = useState(false);
@@ -33,7 +39,7 @@ const RecipeNavbar = () => {
     }, [userRecipes, id]);
 
     return (
-        <div className="recipe-navbar">
+        <Navbar>
             <NavbarButton
                 path={returnPath}
                 exact
@@ -43,7 +49,6 @@ const RecipeNavbar = () => {
             <NavbarButton
                 icon={<AddIcon />}
                 path={path}
-                // style={NavbarButton.styles.GRAY}
                 color="gray"
             ></NavbarButton>
             {loggedIn && isUserRecipe && (
@@ -61,10 +66,9 @@ const RecipeNavbar = () => {
             <NavbarButton
                 icon={<PersonIcon />}
                 path={userPagePath}
-                // style={NavbarButton.styles.GRAY}
                 color="gray"
             ></NavbarButton>
-        </div>
+        </Navbar>
     );
 };
 
