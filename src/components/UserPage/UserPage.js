@@ -1,11 +1,31 @@
 import React, { useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
-
 import { UserContext } from "../../contexts/UserContext";
+import styled, { css } from "styled-components";
 
 import RecipeNavbar from "../RecipeNavbar/RecipeNavbar";
 
-import "./UserPage.css";
+const UserPageContent = styled.div`
+    text-align: center;
+`;
+
+const UserPageButton = styled.button`
+    background-color: #ffb803;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20px;
+
+    ${(props) =>
+        props.logout &&
+        css`
+            background-color: #003a57;
+        `}
+`;
 
 const UserPage = () => {
     const UserCTX = useContext(UserContext);
@@ -19,37 +39,34 @@ const UserPage = () => {
     const history = useHistory();
 
     return (
-        <div>
+        <>
             <RecipeNavbar />
-            <div className="user-page">
+            <UserPageContent>
                 <h2>Witaj: {UserCTX.userName}</h2>
                 <p>Twoje przepisy</p>
                 {UserCTX?.userRecipes.map((elem) => {
                     return (
-                        <button
-                            type="button"
-                            className="user-page__recipe-link"
+                        <UserPageButton
                             onClick={() => history.push(`recipe/${elem}`)}
                         >
                             Przepis {elem}
-                        </button>
+                        </UserPageButton>
                     );
                 })}
                 <p>
                     ulubione przepisy nie są dostępne w wersji demonstracyjnej
                 </p>
-                <button
-                    type="button"
+                <UserPageButton
                     onClick={() => {
                         UserCTX.logoutUser();
                         history.push("/recipes");
                     }}
-                    className="user-page__recipe-link--logout"
+                    logout
                 >
                     Wyloguj
-                </button>
-            </div>
-        </div>
+                </UserPageButton>
+            </UserPageContent>
+        </>
     );
 };
 

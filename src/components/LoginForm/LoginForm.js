@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 
 import { UserContext } from "../../contexts/UserContext";
 
@@ -7,7 +8,125 @@ import NavbarButton from "../NavbarButton/NavbarButton";
 import BackArrow from "../../assets/BackArrow/BackArrow";
 import MessImage from "../../assets/MessImage/MessImage";
 
-import "./LoginForm.css";
+const Body = styled.div`
+    min-height: 100%;
+    border: solid 1px #979797;
+    background: linear-gradient(#ffb803 50%, #f6f1e9 50%);
+    text-align: center;
+`;
+
+const PageNav = styled.div`
+    padding: 10px;
+`;
+
+const ImageZone = styled.div`
+    margin: 10px;
+    text-align: center;
+`;
+
+const Main = styled.div`
+    margin: 8px;
+    border-radius: 19px;
+    box-shadow: 0 10px 10px 5px rgba(47, 47, 55, 0.21);
+    border: solid 1px #ffb803;
+    background-color: #ffffff;
+`;
+
+const LoginFormContent = styled.form`
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px 0px 20px;
+`;
+
+const InputLabel = styled.label`
+    height: 30px;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 3.07;
+    letter-spacing: normal;
+    color: #000000;
+`;
+
+const FormInput = styled.input`
+    min-width: 240px;
+    height: 45px;
+    opacity: 0.77;
+    border-radius: 9px;
+    border: solid 2px #a8b2ba;
+    background-color: #ffffff;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.37;
+    letter-spacing: normal;
+    color: #000000;
+    padding-left: 10px;
+`;
+
+const SubmitButton = styled.input`
+    margin-top: 20px;
+    min-width: 200px;
+    height: 45px;
+    border-radius: 22px;
+    border: solid 4px #ffb803;
+
+    background: none;
+    /* color: inherit; */
+    /* border: none; */
+    padding: 0;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    outline: inherit;
+
+    /* font-size: 35px; */
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #003a57;
+    &:disabled {
+        opacity: 0.3;
+    }
+`;
+
+const ErrorInformation = styled.div`
+    height: 20px;
+    margin: 5px;
+
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    color: #003a57;
+`;
+
+const RegistrationButton = styled.button`
+    border-radius: 44.5px;
+    min-width: 200px;
+    height: 45px;
+    border: solid 2px #ffffff;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #003a57;
+    margin: 20px;
+`;
 
 const LoginForm = () => {
     const [login, setLogin] = useState("");
@@ -68,60 +187,46 @@ const LoginForm = () => {
     };
 
     return (
-        <div className="login-form">
-            <div className="login-form-navigation">
+        <Body>
+            <PageNav>
                 <NavbarButton
                     path="/recipes"
                     label="Wróć do strony głównej"
                     icon={<BackArrow />}
                 />
-            </div>
-            <div className="login-form-image">
+            </PageNav>
+            <ImageZone>
                 <MessImage />
-            </div>
-            <div className="login-form-main">
-                <form
-                    onSubmit={handleLogin}
-                    className="login-form-main--content"
-                >
-                    <label htmlFor="login" className="login-form-main--label">
-                        Login
-                    </label>
-                    <input
+            </ImageZone>
+            <Main>
+                <LoginFormContent onSubmit={handleLogin}>
+                    <InputLabel htmlFor="login">Login</InputLabel>
+                    <FormInput
                         type="text"
                         id="login"
                         name="login"
-                        className="login-form-main__input"
                         onChange={(e) => setLogin(e.target.value)}
                     />
-                    <label htmlFor="lname" className="login-form-main--label">
-                        Hasło
-                    </label>
-                    <input
+                    <InputLabel htmlFor="lname">Hasło</InputLabel>
+                    <FormInput
                         type="password"
                         id="password"
                         name="password"
-                        className="login-form-main__input"
                         onChange={(e) => setPassword(e.target.value)}
                     />
-                    <input
+                    <SubmitButton
                         type="submit"
                         value="Zaloguj"
-                        className="login-form-main__submit"
+                        // className="login-form-main__submit"
                         disabled={isButtonDisabled}
                     />
-                </form>
-                <div className="login-form-main__info">{helperText}</div>
-            </div>
-            <div className="login-form-main__button">
-                <button
-                    className="login-form-main__button--registration"
-                    onClick={() => history.push("/registration")}
-                >
-                    Załóż konto
-                </button>
-            </div>
-        </div>
+                </LoginFormContent>
+                <ErrorInformation>{helperText}</ErrorInformation>
+            </Main>
+            <RegistrationButton onClick={() => history.push("/registration")}>
+                Załóż konto
+            </RegistrationButton>
+        </Body>
     );
 };
 
