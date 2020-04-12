@@ -20,6 +20,10 @@ const RecipeContent = styled.div`
     border: solid 1px #ffb803;
     background-color: #ffb803;
     overflow: auto;
+
+    @media (min-width: 800px) {
+        margin: 0 50px 50px 50px;
+    }
 `;
 
 const Recipe = () => {

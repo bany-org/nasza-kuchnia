@@ -17,12 +17,14 @@ const Card = styled.div`
             margin-bottom: 0px;
             border-radius: 20px 20px 0 0;
         `};
+    @media (min-width: 800px) {
+    }
 `;
 
 const RecipeCard = ({ generalData, recipeTop }) => {
     return (
         <Card recipeTop={recipeTop}>
-            <ImagePlaceholder type={generalData.type} />
+            <ImagePlaceholder recipeTop={recipeTop} type={generalData.type} />
             <RecipeContent recipeTop={recipeTop} generalData={generalData} />
         </Card>
     );
