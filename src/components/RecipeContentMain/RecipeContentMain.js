@@ -18,6 +18,9 @@ const RecipeContentButton = styled.button`
     font-family: "Playfair Display", serif;
     font-size: 15px;
     font-weight: bold;
+    @media (min-width: 800px) {
+        display: none;
+    }
 `;
 
 const Info = styled.div`
@@ -28,13 +31,47 @@ const Info = styled.div`
     line-height: 1.11;
 `;
 
-const RecipeContentList = styled.ul`
+const RecipeContentList = styled.div`
     text-align: left;
     list-style: none;
     padding: unset;
     margin: 0;
     display: flex;
+    width: 100%;
     flex-direction: column;
+    align-items: center;
+    ${(props) =>
+        props.hidden &&
+        css`
+            @media (max-width: 800px) {
+                display: none;
+            }
+        `}
+
+    @media (min-width: 800px) {
+        width: 40%;
+    }
+`;
+
+const PreparationList = styled.div`
+    text-align: left;
+    list-style: none;
+    padding: unset;
+    margin: 0;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    ${(props) =>
+        props.hidden &&
+        css`
+            @media (max-width: 800px) {
+                display: none;
+            }
+        `}
+    @media (min-width: 800px) {
+        background-color: white;
+    }
 `;
 
 const ListItem = styled.li`
@@ -58,6 +95,9 @@ const ListItem = styled.li`
             opacity: 0.5;
             text-decoration: line-through;
         `}
+    @media (min-width: 800px) {
+        margin: 3px 10px;
+    }
 `;
 
 const PreparationListItem = styled.li`
@@ -81,6 +121,9 @@ const PreparationListItem = styled.li`
                 display: none;
             }
         `}
+    @media (min-width: 800px) {
+        border-bottom: 1px solid gray;
+    }
 `;
 
 const CheckMark = styled.div`
@@ -110,6 +153,10 @@ const PreparationItemContent = styled.div`
     letter-spacing: normal;
     padding-top: 8px;
     padding-bottom: 8px;
+`;
+
+const RecipeMain = styled.div`
+    display: flex;
 `;
 
 const RecipeContentMain = ({ data }) => {
@@ -169,8 +216,8 @@ const RecipeContentMain = ({ data }) => {
             <Info>
                 Dotknij składnik, który chcesz wykreśilić bo już go masz
             </Info>
-            {ingredientsTab ? (
-                <RecipeContentList>
+            <RecipeMain>
+                <RecipeContentList hidden={!ingredientsTab}>
                     {data.ingredients.map((elem, i) => {
                         const clicked =
                             clickedIngredients.indexOf(elem.name) !== -1;
@@ -187,8 +234,8 @@ const RecipeContentMain = ({ data }) => {
                         );
                     })}
                 </RecipeContentList>
-            ) : (
-                <RecipeContentList>
+
+                <PreparationList hidden={ingredientsTab}>
                     {Object.keys(data.preparation).map((elem) => {
                         return (
                             <PreparationListItem
@@ -210,8 +257,8 @@ const RecipeContentMain = ({ data }) => {
                             </PreparationListItem>
                         );
                     })}
-                </RecipeContentList>
-            )}
+                </PreparationList>
+            </RecipeMain>
         </Body>
     );
 };
