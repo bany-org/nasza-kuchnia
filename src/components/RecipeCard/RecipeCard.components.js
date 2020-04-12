@@ -23,8 +23,12 @@ import DishIcon from "../../assets/DishIcon/DishIcon";
 import CupcakeIcon from "../../assets/CupcakeIcon/CupcakeIcon";
 
 const ImgPlaceholder = styled.div`
-    width: 110px;
+    /* width: 110px; */
+    min-width: 100px;
     overflow: hidden;
+    @media (max-width: 320px) {
+        display: none;
+    }
 `;
 
 export const ImagePlaceholder = ({ type }) => {
@@ -57,12 +61,19 @@ const Content = styled.div`
         css`
             border-radius: 0px 20px 0 0;
         `};
+    @media (max-width: 320px) {
+        border-radius: 20px;
+        align-items: center;
+    }
 `;
 
 const Name = styled.div`
     font-size: 21px;
     font-weight: bold;
     text-align: left;
+    @media (max-width: 320px) {
+        text-align: center;
+    }
 `;
 
 const AdditionalInfo = styled.div`
