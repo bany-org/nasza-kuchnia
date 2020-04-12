@@ -6,15 +6,12 @@ import axios from "axios";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import RecipesListNavbar from "../RecipesListNavbar/RecipesListNavbar";
 
-const RecipeListContainder = styled.div`
+const RecipeListContainer = styled.div`
     padding: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    flex-basis: 100%;
-    flex: 1;
-    @media (min-width: 1024px) {
+    @media (min-width: 800px) {
         flex-flow: wrap;
         justify-content: space-evenly;
     }
@@ -22,10 +19,9 @@ const RecipeListContainder = styled.div`
 
 const NavbarLink = styled(NavLink)`
     text-decoration: none;
-    max-width: 440px;
     width: 100%;
-    @media (min-width: 1024px) {
-        margin: 0px 10px;
+    @media (min-width: 800px) {
+        width: 48%;
     }
 `;
 
@@ -46,8 +42,8 @@ const RecipesList = () => {
     return (
         <>
             <RecipesListNavbar />
-            <RecipeListContainder>
-                {isLoading && <div>lodading</div>}
+            <RecipeListContainer>
+                {isLoading && <div>loading</div>}
                 {!isLoading &&
                     recipesList.map((elem) => {
                         return (
@@ -62,7 +58,7 @@ const RecipesList = () => {
                             </NavbarLink>
                         );
                     })}
-            </RecipeListContainder>
+            </RecipeListContainer>
         </>
     );
 };
