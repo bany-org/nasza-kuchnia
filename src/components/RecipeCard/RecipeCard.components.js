@@ -23,17 +23,27 @@ import DishIcon from "../../assets/DishIcon/DishIcon";
 import CupcakeIcon from "../../assets/CupcakeIcon/CupcakeIcon";
 
 const ImgPlaceholder = styled.div`
-    /* width: 110px; */
     min-width: 100px;
     overflow: hidden;
     @media (max-width: 320px) {
         display: none;
     }
+    ${(props) =>
+        props.recipeTop &&
+        css`
+            @media (min-width: 800px) {
+                background-color: white;
+                width: 40%;
+                & > svg {
+                    display: none;
+                }
+            }
+        `};
 `;
 
-export const ImagePlaceholder = ({ type }) => {
+export const ImagePlaceholder = ({ type, recipeTop }) => {
     return (
-        <ImgPlaceholder>
+        <ImgPlaceholder recipeTop={recipeTop}>
             {type === RECIPE_TYPES.SALAD && <SaladPlaceholder />}
             {type === RECIPE_TYPES.CAKE && <CakePlaceholder />}
             {type === RECIPE_TYPES.FASTFOOD && <HamburgerPlaceholder />}
@@ -71,6 +81,14 @@ const Name = styled.div`
     font-size: 21px;
     font-weight: bold;
     text-align: left;
+    ${(props) =>
+        props.recipeTop &&
+        css`
+            border-radius: 0px 20px 0 0;
+            @media (min-width: 800px) {
+                font-size: 30px;
+            }
+        `};
     @media (max-width: 320px) {
         text-align: center;
     }
@@ -91,7 +109,7 @@ const AdditionalInfoElement = styled.span`
 export const RecipeContent = ({ generalData, recipeTop }) => {
     return (
         <Content recipeTop={recipeTop}>
-            <Name>{generalData.name}</Name>
+            <Name recipeTop={recipeTop}>{generalData.name}</Name>
             <AdditionalInfo>
                 <AdditionalInfoElement>
                     <ClockIcon />
@@ -124,9 +142,11 @@ export const RecipeContent = ({ generalData, recipeTop }) => {
                     {RECIPE_TYPES_TRANSLATIONS[generalData.type]}
                 </AdditionalInfoElement>
             </AdditionalInfo>
-            <AdditionalInfoElement>
-                <span>{`Dodała: ${generalData.author}`}</span>
-            </AdditionalInfoElement>
+            <AdditionalInfo>
+                <AdditionalInfoElement>
+                    <span>{`Dodała: ${generalData.author}`}</span>
+                </AdditionalInfoElement>
+            </AdditionalInfo>
         </Content>
     );
 };
