@@ -5,7 +5,7 @@ import { ImagePlaceholder, RecipeContent } from "./RecipeCard.components";
 
 const Card = styled.div`
     background-color: #ffffff;
-    min-height: 120px;
+    min-height: 130px;
     display: flex;
     border-radius: 20px;
     margin-bottom: 10px;

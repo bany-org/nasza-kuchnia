@@ -17,13 +17,7 @@ const Body = styled.div`
     margin: 0;
     min-height: 100vh;
     background-color: #f6f1e9;
-
-    @media (min-width: 1000px) {
-        background-color: pink;
-    }
 `;
-
-// import "./App.css";
 
 function App() {
     return (

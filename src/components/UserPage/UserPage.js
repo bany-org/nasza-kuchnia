@@ -29,14 +29,13 @@ const UserPageButton = styled.button`
 
 const UserPage = () => {
     const UserCTX = useContext(UserContext);
+    const history = useHistory();
 
     useEffect(() => {
         if (!UserCTX.loggedIn) {
             history.push("login/");
         }
     }, []);
-
-    const history = useHistory();
 
     return (
         <>

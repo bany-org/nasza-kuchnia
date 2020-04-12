@@ -18,6 +18,16 @@ const Navbar = styled.div`
     justify-content: space-between;
 `;
 
+const NavigationSection = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+`;
+
+const NavigationElement = styled.div`
+    margin: 0 2px;
+`;
+
 const RecipeNavbar = () => {
     const [isUserRecipe, setIsUserRecipe] = useState(false);
     const UserCTX = useContext(UserContext);
@@ -45,29 +55,35 @@ const RecipeNavbar = () => {
                 exact
                 label="Wróć"
                 icon={<BackArrow />}
-            ></NavbarButton>
-            <NavbarButton
-                icon={<AddIcon />}
-                path={path}
-                color="gray"
-            ></NavbarButton>
-            {loggedIn && isUserRecipe && (
-                <>
+            />
+            <NavigationSection>
+                <NavigationElement>
+                    <NavbarButton icon={<AddIcon />} path={path} color="gray" />
+                </NavigationElement>
+                {loggedIn && isUserRecipe && (
+                    <NavigationElement>
+                        <NavbarButton
+                            icon={<TrashIcon />}
+                            path={`/remove/recipe/${id}`}
+                        />
+                    </NavigationElement>
+                )}
+                {loggedIn && isUserRecipe && (
+                    <NavigationElement>
+                        <NavbarButton
+                            icon={<PencilIcon />}
+                            path={`/edit/recipe/${id}`}
+                        />
+                    </NavigationElement>
+                )}
+                <NavigationElement>
                     <NavbarButton
-                        icon={<TrashIcon />}
-                        path={`/remove/recipe/${id}`}
-                    ></NavbarButton>
-                    <NavbarButton
-                        icon={<PencilIcon />}
-                        path={`/edit/recipe/${id}`}
-                    ></NavbarButton>
-                </>
-            )}
-            <NavbarButton
-                icon={<PersonIcon />}
-                path={userPagePath}
-                color="gray"
-            ></NavbarButton>
+                        icon={<PersonIcon />}
+                        path={userPagePath}
+                        color="gray"
+                    />
+                </NavigationElement>
+            </NavigationSection>
         </Navbar>
     );
 };
