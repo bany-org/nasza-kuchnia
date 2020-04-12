@@ -8,10 +8,25 @@ import RecipesListNavbar from "../RecipesListNavbar/RecipesListNavbar";
 
 const RecipeListContainder = styled.div`
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    flex: 1;
+    @media (min-width: 1024px) {
+        flex-flow: wrap;
+        justify-content: space-evenly;
+    }
 `;
 
 const NavbarLink = styled(NavLink)`
     text-decoration: none;
+    max-width: 440px;
+    width: 100%;
+    @media (min-width: 1024px) {
+        margin: 0px 10px;
+    }
 `;
 
 const RecipesList = () => {
@@ -39,7 +54,6 @@ const RecipesList = () => {
                             <NavbarLink
                                 exact
                                 to={`/recipe/${elem.id}`}
-                                className="recipes-list-container__item"
                                 key={elem.id}
                             >
                                 <RecipeCard
